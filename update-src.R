@@ -2,12 +2,6 @@ options(finbif_cache_path = "cache", finbif_rate_limit = Inf)
 
 checklist <- read.csv("checklist.csv")
 
-ranks <- c("class", "order", "family", "genus", "species")
-
-child_ranks <- setNames(ranks[-1], ranks[-5])
-
-parent_ranks <- setNames(ranks[-5], ranks[-1])
-
 paths <- with(
   checklist,
   gsub(

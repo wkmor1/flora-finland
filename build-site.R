@@ -4,11 +4,19 @@ dir.create("build")
 
 file.copy("src/styles.css", "build/styles.css", overwrite = TRUE)
 
-viewport <- htmltools::meta(
+ranks <- c("class", "order", "family", "genus", "species")
+
+child_ranks <- setNames(ranks[-1], ranks[-5])
+
+parent_ranks <- setNames(ranks[-5], ranks[-1])
+
+viewport <- htmltools::tags$meta(
   name = "viewport", content = "width=device-width, initial-scale=1.0"
 )
 
-css <- link(rel = "stylesheet", type = "text/css", href = "/styles.css")
+css <- htmltools::tags$link(
+  rel = "stylesheet", type = "text/css", href = "/styles.css"
+)
 
 front_page <- with(
   htmltools::tags,
