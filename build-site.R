@@ -4,58 +4,73 @@ dir.create("build")
 
 file.copy("src/styles.css", "build/styles.css", overwrite = TRUE)
 
+file.copy("src/img0.jpeg", "build/img0.jpeg", overwrite = TRUE)
+
 ranks <- c("class", "order", "family", "genus", "species")
 
 child_ranks <- setNames(ranks[-1], ranks[-5])
 
 parent_ranks <- setNames(ranks[-5], ranks[-1])
 
-viewport <- htmltools::tags$meta(
-  name = "viewport", content = "width=device-width, initial-scale=1.0"
+viewport <- htmltools::withTags(
+  meta(name = "viewport", content = "width=device-width, initial-scale=1.0")
 )
 
-css <- htmltools::tags$link(
-  rel = "stylesheet", type = "text/css", href = "/styles.css"
+css <- htmltools::withTags(
+  link(rel = "stylesheet", type = "text/css", href = "/styles.css")
 )
 
-front_page <- with(
-  htmltools::tags,
-  html(
-    head(title("Tracheophyta"), viewport, css),
-    body(
-      # container
-      div(
-        class = "main",
-        # page title
-        div(
-          class = "navbar-heading",
-          span("Flora of Finland")
-        ),
-        div(
-          class = "row1",
+nav_bar <- htmltools::withTags(
+  header(
+    nav(
+      class = "navbar",
+      a(href = "/", class = "nav-home", "Flora of Finland"),
+      a(href ="/index", class = "nav-li", "Index")
+    )
+  )
+)
+
+index <- list()
+
+# front page
+front_page <- htmltools::withTags(
+  htmltools::tagList(
+    html(
+      head(title("Tracheophyta"), viewport, css),
+      body(
+        main(
+          class = "main",
+          nav_bar,
           div(
-            class = "col1",
-            # child taxa
+            class = "row1",
+            # image
             div(
-              do.call(
-                ul,
-                lapply(
-                  mapply(
-                    a,
-                    lapply(
-                      stringr::str_to_sentence(
-                        basename(list.dirs("src", recursive = FALSE))
+              class = "col2",
+              img(src = "/img0.jpeg")
+            ),
+            div(
+              class = "col1",
+              # child taxa
+              div(
+                ul(
+                  lapply(
+                    mapply(
+                      a,
+                      lapply(
+                        stringr::str_to_sentence(
+                          basename(list.dirs("src", recursive = FALSE))
+                        ),
+                        span,
+                        class = "class"
                       ),
-                      span,
-                      class = "class"
+                      href = paste0(
+                        basename(list.dirs("src", recursive = FALSE)), "/"
+                      ),
+                      SIMPLIFY = FALSE,
+                      USE.NAMES = FALSE
                     ),
-                    href = paste0(
-                      basename(list.dirs("src", recursive = FALSE)), "/"
-                    ),
-                    SIMPLIFY = FALSE,
-                    USE.NAMES = FALSE
-                  ),
-                  li
+                    li
+                  )
                 )
               )
             )
@@ -68,7 +83,10 @@ front_page <- with(
 
 htmltools::save_html(front_page, file.path("build", "index.html"))
 
+# taxon pages
 for (page in list.files("src", recursive = TRUE, pattern = "content.yml")) {
+
+  index[["page"]] <-  c(index[["page"]], dirname(page))
 
   page_file <- file.path("src", page)
 
@@ -76,7 +94,11 @@ for (page in list.files("src", recursive = TRUE, pattern = "content.yml")) {
 
   name <- content[["scientificName"]]
 
+  index[["name"]] <-  c(index[["name"]], name)
+
   rank <- content[["taxonRank"]]
+
+  index[["rank"]] <-  c(index[["rank"]], rank)
 
   taxon <- dirname(page)
 
@@ -95,86 +117,89 @@ for (page in list.files("src", recursive = TRUE, pattern = "content.yml")) {
 
   taxa <- list.dirs(dirname(page_file), recursive = FALSE, full.names = FALSE)
 
-  sp_page <- with(
-    htmltools::tags,
-    html(
-      head(title(name), viewport, css),
-      body(
-        # container
-        div(
-          class = "main",
-          # page title
-          div(
-            class = "navbar-heading",
-            span("Flora of Finland")
-          ),
-          div(
-            class = "row1",
-            # image
+  taxon_page <- htmltools::withTags(
+    htmltools::tagList(
+      html(
+        head(title(name), viewport, css),
+        body(
+          main(
+            class = "main",
+            nav_bar,
             div(
-              class = "col2",
-              img(src = content[["images"]][[1L]][["file"]])
-            ),
-            div(
-              class = "col1",
-              # parent taxon
-              if (basename(dirname(taxon)) != ".") {
-                div(
-                  a(
-                    "\u2190",
-                    span(
-                      stringr::str_to_sentence(basename(dirname(taxon))),
-                      class = parent_ranks[[rank]]
-                    ),
-                    href = file.path("", dirname(taxon))
-                  )
-                )
-              } else {
-                div(
-                  a("\u2190", span("Tracheophyta", class ="phylum"), href = "/")
-                )
-              },
-              # taxon name
+              class = "row1",
+              # image
               div(
-                h1(
-                  class = "page-title",
-                  span(name, class = rank)
-                ),
-                if (!is.null(content[["vernacularName"]])) {
-                  h2(content[["vernacularName"]], class = "subtitle")
-                }
+                class = "col2",
+                img(src = content[["images"]][[1L]][["file"]])
               ),
-              # prev or next
               div(
-                if (length(prev_taxon)) a("\u25C2 Prev-", href = file.path("", prev_taxon)),
-                if (!is.na(next_taxon)) a("-Next \u25B8", href = file.path("", next_taxon)),
-              ),
-              # child taxa
-              if (length(taxa)) div(
-                do.call(
-                  ul,
-                  lapply(
-                    mapply(
-                      a,
-                      lapply(
-                        gsub("_", " ", stringr::str_to_sentence(taxa)),
-                        span,
-                        class = child_ranks[[rank]]
+                class = "col1",
+                # parent taxon
+                if (basename(dirname(taxon)) != ".") {
+                  div(
+                    a(
+                      "\u2190",
+                      span(
+                        stringr::str_to_sentence(basename(dirname(taxon))),
+                        class = parent_ranks[[rank]]
                       ),
-                      href = paste0(taxa, "/"),
-                      SIMPLIFY = FALSE,
-                      USE.NAMES = FALSE
-                    ),
-                    li
+                      href = file.path("", dirname(taxon))
+                    )
+                  )
+                } else {
+                  div(
+                    a("\u2190", span("Tracheophyta", class ="phylum"), href = "/")
+                  )
+                },
+                # taxon name
+                div(
+                  h1(
+                    class = "page-title",
+                    span(name, class = rank)
+                  ),
+                  if (!is.null(content[["vernacularName"]])) {
+                    h2(content[["vernacularName"]], class = "subtitle")
+                  }
+                ),
+                # prev or next
+                div(
+                  if (length(prev_taxon)) {
+
+                    a("\u25C2 Prev-", href = file.path("", prev_taxon))
+
+                  },
+                  if (!is.na(next_taxon)) {
+
+                    a("-Next \u25B8", href = file.path("", next_taxon))
+
+                  }
+                ),
+                # child taxa
+                if (length(taxa)) div(
+                  ul(
+                    lapply(
+                      mapply(
+                        a,
+                        lapply(
+                          gsub("_", " ", stringr::str_to_sentence(taxa)),
+                          span,
+                          class = child_ranks[[rank]]
+                        ),
+                        href = paste0(taxa, "/"),
+                        SIMPLIFY = FALSE,
+                        USE.NAMES = FALSE
+                      ),
+                      li
+                    )
                   )
                 )
               )
+            ),
+            # description
+            if (!is.null(content[["description"]])) article(
+              class = "row2",
+              p(class = "description", content[["description"]])
             )
-          ),
-          # description
-          if (!is.null(content[["description"]])) div(
-            class = "row2",
-            p(class = "description", content[["description"]])
           )
         )
       )
@@ -185,7 +210,9 @@ for (page in list.files("src", recursive = TRUE, pattern = "content.yml")) {
     file.path("build", dirname(page)), showWarnings = FALSE, recursive = TRUE
   )
 
-  htmltools::save_html(sp_page, file.path("build", dirname(page), "index.html"))
+  htmltools::save_html(
+    taxon_page, file.path("build", dirname(page), "index.html")
+  )
 
   file.copy(
     file.path("src", dirname(page), "img0.jpeg"),
@@ -194,3 +221,69 @@ for (page in list.files("src", recursive = TRUE, pattern = "content.yml")) {
   )
 
 }
+
+# index
+index <- as.data.frame(index)
+
+index <- index[order(index[["name"]]), ]
+
+index[["letter"]] <- substr(index[["name"]], 1, 1)
+
+index <- split(index, index[["letter"]])
+
+index_page <- htmltools::withTags(
+  htmltools::tagList(
+    head(title("Index"), viewport, css),
+    body(
+      main(
+        class = "main",
+        nav_bar,
+        div(
+          class = "index-container",
+          ul(
+            class = "index",
+            mapply(
+              li,
+              lapply(names(index), h3),
+              lapply(
+                lapply(
+                  lapply(
+                    index,
+                    \(x) {
+                      name <- mapply(
+                        span,
+                        x[["name"]],
+                        class = x[["rank"]],
+                        SIMPLIFY = FALSE,
+                        USE.NAMES = FALSE
+                      )
+                      mapply(
+                        a,
+                        name,
+                        href = file.path("", x[["page"]]),
+                        SIMPLIFY = FALSE,
+                        USE.NAMES = FALSE
+                      )
+                    }
+                  ),
+                  lapply,
+                  li
+                ),
+                ul,
+                class = "index"
+              ),
+              SIMPLIFY = FALSE,
+              USE.NAMES = FALSE
+            )
+          )
+        )
+      )
+    )
+  )
+)
+
+dir.create(
+  file.path("build", "index"), showWarnings = FALSE, recursive = TRUE
+)
+
+htmltools::save_html(index_page, file.path("build", "index/index.html"))

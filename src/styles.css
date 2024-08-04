@@ -1,18 +1,28 @@
 body {
   font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  margin: 0;
 }
 
 .main {
   max-width: 1300px;
-  margin: 2em auto;
+  margin: 0 auto 2em auto;
 }
 
-.navbar-heading {
-  padding-top: 5px;
-  padding-bottom: 6px;
+.navbar {
+  padding: 5px 15px;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav-home {
   font-weight: 500;
   font-size: 2rem;
-  color: hsl(0, 0%, 35%);
+}
+
+.nav-link {
+  font-weight: 300;
+  font-size: 1rem;
 }
 
 .page-title {
@@ -39,8 +49,7 @@ a:hover {
   filter: brightness(50%);
 }
 
-.navbar-heading, .row1, .row2 {
-  padding-left: 15px;
+.navbar, .row1, .row2, .index-container  {
   border-bottom: 1px solid hsl(0, 0%, 85%);
   background-color: hsl(0, 0%, 95%);
 }
@@ -61,6 +70,10 @@ ul {
   padding-left: 0;
 }
 
+.index {
+  list-style-type: none;
+}
+
 .description {
   font-size: 1.3rem;
 }
@@ -71,12 +84,19 @@ ul {
 }
 
 .col1 {
-  padding-top: 10px;
+  padding-top: 15px;
+  padding-left: 15px;
+}
+
+.index-container {
+  column-width: 14em;
+  column-gap: 2em;
+  padding: 15px;
 }
 
 @media screen and (min-width: 600px) {
 
-  .navbar-heading, .row1 {
+  .row1 {
     display: flex;
     justify-content: space-between;
   }
