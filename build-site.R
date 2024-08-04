@@ -86,7 +86,9 @@ htmltools::save_html(front_page, file.path("build", "index.html"))
 # taxon pages
 for (page in list.files("src", recursive = TRUE, pattern = "content.yml")) {
 
-  index[["page"]] <-  c(index[["page"]], dirname(page))
+  taxon <- dirname(page)
+
+  index[["page"]] <-  c(index[["page"]], taxon)
 
   page_file <- file.path("src", page)
 
@@ -100,13 +102,13 @@ for (page in list.files("src", recursive = TRUE, pattern = "content.yml")) {
 
   index[["rank"]] <-  c(index[["rank"]], rank)
 
-  taxon <- dirname(page)
+  page_dir <- dirname(page_file)
 
   siblings <- sub(
     "./",
     "",
     file.path(
-      dirname(taxon), list.dirs(dirname(dirname(page_file)), FALSE, FALSE)
+      dirname(taxon), list.dirs(dirname(page_dir), FALSE, FALSE)
     ),
     fixed = TRUE
   )
@@ -115,7 +117,7 @@ for (page in list.files("src", recursive = TRUE, pattern = "content.yml")) {
 
   next_taxon <- siblings[which(siblings == taxon) + 1L]
 
-  taxa <- list.dirs(dirname(page_file), recursive = FALSE, full.names = FALSE)
+  taxa <- list.dirs(page_dir, recursive = FALSE, full.names = FALSE)
 
   taxon_page <- htmltools::withTags(
     htmltools::tagList(
@@ -207,16 +209,14 @@ for (page in list.files("src", recursive = TRUE, pattern = "content.yml")) {
   )
 
   dir.create(
-    file.path("build", dirname(page)), showWarnings = FALSE, recursive = TRUE
+    file.path("build", taxon), showWarnings = FALSE, recursive = TRUE
   )
 
-  htmltools::save_html(
-    taxon_page, file.path("build", dirname(page), "index.html")
-  )
+  htmltools::save_html(taxon_page, file.path("build", taxon, "index.html"))
 
   file.copy(
-    file.path("src", dirname(page), "img0.jpeg"),
-    file.path("build", dirname(page), "img0.jpeg"),
+    file.path("src", taxon, "img0.jpeg"),
+    file.path("build", taxon, "img0.jpeg"),
     overwrite = TRUE
   )
 
@@ -282,8 +282,6 @@ index_page <- htmltools::withTags(
   )
 )
 
-dir.create(
-  file.path("build", "index"), showWarnings = FALSE, recursive = TRUE
-)
+dir.create(file.path("build", "index"), showWarnings = FALSE, recursive = TRUE)
 
 htmltools::save_html(index_page, file.path("build", "index/index.html"))
