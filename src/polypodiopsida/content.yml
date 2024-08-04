@@ -2,3 +2,8 @@ finbifID: MX.4977160
 vernacularName: Ferns
 scientificName: Polypodiopsida
 taxonRank: class
+description: Megaphyllous perennials with free living gametophytes and sporangia bearing
+  sporophytes.
+sources:
+- type: url
+  value: https://en.wikipedia.org/wiki/Fern
