@@ -282,6 +282,8 @@ index_page <- htmltools::withTags(
   )
 )
 
-dir.create(file.path("build", "index"), showWarnings = FALSE, recursive = TRUE)
+dir.create(
+  file.path("build", "taxa-index"), showWarnings = FALSE, recursive = TRUE
+)
 
-htmltools::save_html(index_page, file.path("build", "index/index.html"))
+htmltools::save_html(index_page, file.path("build", "taxa-index/index.html"))
