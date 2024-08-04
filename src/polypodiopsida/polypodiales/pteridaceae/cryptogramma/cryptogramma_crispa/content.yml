@@ -14,3 +14,5 @@ description: Deciduous herb with short-creeping, branching rhizome covered with 
 images:
 - file: img0.jpeg
   src: https://www.inaturalist.org/photos/151138579
+scientificName: Cryptogramma crispa
+taxonRank: species
