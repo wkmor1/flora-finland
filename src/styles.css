@@ -1,3 +1,108 @@
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+.main {
+  max-width: 1300px;
+  margin: 2em auto;
+}
+
+.navbar-heading {
+  padding-top: 5px;
+  padding-bottom: 6px;
+  font-weight: 500;
+  font-size: 2rem;
+  color: hsl(0, 0%, 35%);
+}
+
+.page-title {
+  font-weight: 350;
+  font-size: 2.5rem;
+  margin-bottom: 0;
+}
+
+.subtitle {
+  font-weight: 250;
+  font-size: 1.25rem;
+  margin-top: 0;
+}
+
+.genus, .species {
+  font-style: italic;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  filter: brightness(50%);
+}
+
+.navbar-heading, .row1, .row2 {
+  padding-left: 15px;
+  border-bottom: 1px solid hsl(0, 0%, 85%);
+  background-color: hsl(0, 0%, 95%);
+}
+
+.row2 {
+  padding: 5px 15px;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+  margin: 0;
+}
+
+ul {
+  list-style-type: square;
+  list-style-position: inside;
+  padding-left: 0;
+}
+
+.description {
+  font-size: 1.3rem;
+}
+
+.author {
+  font-weight: 200;
+  font-size: 1.5rem;
+}
+
+.col1 {
+  padding-top: 10px;
+}
+
+@media screen and (min-width: 600px) {
+
+  .navbar-heading, .row1 {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .col1 {
+    flex: .45;
+    margin-right: 10px;
+    align-self: flex-end;
+  }
+
+  .col2 {
+    order: 1;
+    flex: .55;
+  }
+
+  .page-title {
+    font-size: 3rem;
+  }
+
+  .author {
+    font-weight: 200;
+    font-size: 2rem;
+  }
+
+  .subtitle {
+    font-size: 1.5rem;
+  }
+
 }
