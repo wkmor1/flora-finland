@@ -36,7 +36,7 @@ index <- list()
 front_page <- htmltools::withTags(
   htmltools::tagList(
     html(
-      head(title("Tracheophyta"), viewport, css),
+      head(title("Flora of Finland"), viewport, css),
       body(
         main(
           class = "main",
@@ -150,7 +150,11 @@ for (page in list.files("src", recursive = TRUE, pattern = "content.yml")) {
                   )
                 } else {
                   div(
-                    a("\u2190", span("Tracheophyta", class ="phylum"), href = "/")
+                    a(
+                      "\u2190",
+                      span("Tracheophyta", class ="phylum"),
+                      href = "/"
+                    )
                   )
                 },
                 # taxon name
