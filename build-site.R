@@ -25,7 +25,7 @@ nav_bar <- htmltools::withTags(
     nav(
       class = "navbar",
       a(href = "/", class = "nav-home", "Flora of Finland"),
-      a(href ="/index", class = "nav-li", "Index")
+      a(href ="/taxa-index", class = "nav-link", "Index")
     )
   )
 )
