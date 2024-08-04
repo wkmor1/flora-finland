@@ -80,6 +80,19 @@ for (page in list.files("src", recursive = TRUE, pattern = "content.yml")) {
 
   taxon <- dirname(page)
 
+  siblings <- sub(
+    "./",
+    "",
+    file.path(
+      dirname(taxon), list.dirs(dirname(dirname(page_file)), FALSE, FALSE)
+    ),
+    fixed = TRUE
+  )
+
+  prev_taxon <- siblings[which(siblings == taxon) - 1L]
+
+  next_taxon <- siblings[which(siblings == taxon) + 1L]
+
   taxa <- list.dirs(dirname(page_file), recursive = FALSE, full.names = FALSE)
 
   sp_page <- with(
@@ -130,6 +143,11 @@ for (page in list.files("src", recursive = TRUE, pattern = "content.yml")) {
                 if (!is.null(content[["vernacularName"]])) {
                   h2(content[["vernacularName"]], class = "subtitle")
                 }
+              ),
+              # prev or next
+              div(
+                if (length(prev_taxon)) a("\u25C2 Prev-", href = file.path("", prev_taxon)),
+                if (!is.na(next_taxon)) a("-Next \u25B8", href = file.path("", next_taxon)),
               ),
               # child taxa
               if (length(taxa)) div(
