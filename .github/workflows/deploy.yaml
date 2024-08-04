@@ -1,19 +1,17 @@
+name: Build and Deploy
+
 on:
   push:
-    branches: [main, master]
+    branches: [main]
   pull_request:
-    branches: [main, master]
-  workflow_dispatch:
+    branches: [main]
 
-name: deploy.yaml
-
-permissions: read-all
+permissions:
+  contents: write
 
 jobs:
-  build:
+   build-and-deploy:
     runs-on: ubuntu-latest
-    env:
-      GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
     steps:
       - uses: actions/checkout@v4
 
@@ -23,29 +21,11 @@ jobs:
 
       - uses: r-lib/actions/setup-renv@v2
 
-      - name: Build site
+      - name: Build
         run: source("build-site.R")
         shell: Rscript {0}
 
-      - name: Upload website artifact
-        if: ${{ github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master' }}
-        uses: actions/upload-pages-artifact@v3
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
-          path: "build"
-
-  deploy:
-    needs: build
-
-    permissions:
-      pages: write
-      id-token: write
-
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-
-    runs-on: ubuntu-latest
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+          folder: build
