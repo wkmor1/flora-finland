@@ -197,7 +197,7 @@ for (page in list.files("src", recursive = TRUE, pattern = "content.yml")) {
                       class = "main-figcaption-content",
                       summary(
                         class = "main-figcaption-button",
-                        htmltools::HTML("&#x1F6C8;")
+                        htmltools::HTML("&#9432;")
                       ),
                       p(
                         class = "main-figcaption-text",
