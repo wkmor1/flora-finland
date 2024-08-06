@@ -149,6 +149,26 @@ ul {
   padding: 15px;
 }
 
+.main-footer {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.license {
+  margin: 0;
+}
+
+.license-link {
+  display: inline-block;
+}
+
+.license-image {
+ height: 1.2rem;
+ margin-left: 3px;
+ vertical-align: text-bottom;
+}
+
 @media screen and (min-width: 600px) {
 
   .row1 {

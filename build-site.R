@@ -31,6 +31,35 @@ nav_bar <- htmltools::withTags(
   )
 )
 
+page_footer <- htmltools::withTags(
+  footer(
+    class = "main-footer",
+    p(
+      class = "license",
+      `xmlns:cc` = "http://creativecommons.org/ns#",
+      `xmlns:dct` = "http://purl.org/dc/terms/",
+      "This website is marked with",
+      a(
+        class = "license-link",
+        href = "https://creativecommons.org/publicdomain/zero/1.0/?ref=chooser-v1",
+        target = "_blank",
+        rel = "license noopener noreferrer",
+        "CC0 1.0 Universal",
+        img(
+          class = "license-image",
+          src = "https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1",
+          alt = ""
+        ),
+        img(
+          class = "license-image",
+          src = "https://mirrors.creativecommons.org/presskit/icons/zero.svg?ref=chooser-v1",
+          alt = ""
+        )
+      )
+    )
+  )
+)
+
 index <- list()
 
 # front page
@@ -96,7 +125,8 @@ front_page <- htmltools::withTags(
                 )
               )
             )
-          )
+          ),
+          page_footer
         )
       )
     )
@@ -256,7 +286,8 @@ for (page in list.files("src", recursive = TRUE, pattern = "content.yml")) {
             if (!is.null(content[["description"]])) article(
               class = "row2",
               p(class = "description", content[["description"]])
-            )
+            ),
+            page_footer
           )
         )
       )
@@ -331,7 +362,8 @@ index_page <- htmltools::withTags(
               USE.NAMES = FALSE
             )
           )
-        )
+        ),
+        page_footer
       )
     )
   )
