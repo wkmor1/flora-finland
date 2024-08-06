@@ -150,7 +150,7 @@ for (page in list.files("src", recursive = TRUE, pattern = "content.yml")) {
               div(
                 class = "col2",
                 img(
-                  class = "main-image",
+                  class = "main-img",
                   src = content[["images"]][[1L]][["file"]]
                 )
               ),
