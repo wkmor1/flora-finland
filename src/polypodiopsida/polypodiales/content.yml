@@ -7,3 +7,8 @@ description: Ferns bearing sporangia with vertical annuli interrupted by the
 sources:
 - type: doi
   value: 10.2307/25065646
+images:
+- file: img0.jpeg
+  src: https://www.inaturalist.org/photos/290483269
+  alt: Common woodfern (Dryopteris filix-mas) sporangia
+  caption: <span>Dryopteris filix-mas</span> sporangia
