@@ -101,6 +101,14 @@ front_page <- htmltools::withTags(
             ),
             div(
               class = "col1",
+              # taxon name
+              div(
+                h1(
+                  class = "page-title",
+                  "Tracheophyta"
+                ),
+                h2("Vascular plants", class = "subtitle")
+              ),
               # child taxa
               div(
                 ul(
