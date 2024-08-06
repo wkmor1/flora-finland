@@ -57,7 +57,10 @@ front_page <- htmltools::withTags(
                   class = "main-figcaption",
                   details(
                     class = "main-figcaption-content",
-                    summary(class = "main-figcaption-button", "🛈"),
+                    summary(
+                      class = "main-figcaption-button",
+                      htmltools::HTML("&#x1F6C8;")
+                    ),
                     p(
                       class = "main-figcaption-text", "Pitkäjärvi, Enontekiö"
                     )
