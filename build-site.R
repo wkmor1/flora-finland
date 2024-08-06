@@ -50,7 +50,8 @@ front_page <- htmltools::withTags(
               figure(
                 class = "main-figure",
                 img(
-                  class = "main-img", src = "/img0.jpeg",
+                  class = "main-img",
+                  src = "/img0.jpeg",
                   alt = "Pitkäjärvi, Enontekiö"
                 ),
                 figcaption(
@@ -62,7 +63,8 @@ front_page <- htmltools::withTags(
                       htmltools::HTML("&#x1F6C8;")
                     ),
                     p(
-                      class = "main-figcaption-text", "Pitkäjärvi, Enontekiö"
+                      class = "main-figcaption-text",
+                      "Pitkäjärvi, Enontekiö"
                     )
                   )
                 )
@@ -152,9 +154,27 @@ for (page in list.files("src", recursive = TRUE, pattern = "content.yml")) {
               # image
               div(
                 class = "col2",
-                img(
-                  class = "main-img",
-                  src = content[["images"]][[1L]][["file"]]
+                figure(
+                  class = "main-figure",
+                  img(
+                    class = "main-img",
+                    src = content[["images"]][[1L]][["file"]],
+                    alt = content[["images"]][[1L]][["alt"]]
+                  ),
+                  figcaption(
+                    class = "main-figcaption",
+                    details(
+                      class = "main-figcaption-content",
+                      summary(
+                        class = "main-figcaption-button",
+                        htmltools::HTML("&#x1F6C8;")
+                      ),
+                      p(
+                        class = "main-figcaption-text",
+                        htmltools::HTML(content[["images"]][[1L]][["caption"]])
+                      )
+                    )
+                  )
                 )
               ),
               div(

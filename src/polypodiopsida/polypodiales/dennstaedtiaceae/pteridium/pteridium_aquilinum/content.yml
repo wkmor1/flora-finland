@@ -24,5 +24,7 @@ sources:
 images:
 - file: img0.jpeg
   src: https://www.inaturalist.org/photos/414498568
+  alt: Common Bracken (Pteridium aquilinum) growing in Rhitiniemi, Pyhäranta
+  caption: '<span class="species">Pteridium aquilinum</span> (Rhitiniemi, Pyhäranta)'
 scientificName: Pteridium aquilinum
 taxonRank: species
