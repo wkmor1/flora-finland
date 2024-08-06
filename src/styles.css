@@ -1,5 +1,5 @@
 body {
-  font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   margin: 0;
 }
 
@@ -92,6 +92,11 @@ a:hover {
   display: inline-block;
   line-height: 1.5;
   padding: 3px;
+  cursor: pointer;
+}
+
+.main-figcaption-button::-webkit-details-marker {
+  display: none;
 }
 
 .main-figcaption-text {
