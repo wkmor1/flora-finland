@@ -107,7 +107,7 @@ a:hover {
   float: right;
   display: inline-block;
   line-height: 1.5;
-  padding: 3px;
+  padding: 1px 3px;
   cursor: pointer;
   font-weight: 600;
 }
@@ -120,7 +120,7 @@ a:hover {
   margin: 0;
   display: inline-block;
   line-height: 1.5;
-  padding: 3px;
+  padding: 1px 3px;
 }
 
 ul {
