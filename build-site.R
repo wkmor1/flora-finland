@@ -184,7 +184,7 @@ for (page in list.files("src", recursive = TRUE, pattern = "content.yml")) {
               # image
               div(
                 class = "col2",
-                figure(
+                if (!is.null(content[["images"]])) figure(
                   class = "main-figure",
                   img(
                     class = "main-img",

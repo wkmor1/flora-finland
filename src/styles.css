@@ -164,9 +164,9 @@ ul {
 }
 
 .license-image {
- height: 1.2rem;
- margin-left: 3px;
- vertical-align: text-bottom;
+  height: 1.2rem;
+  margin-left: 3px;
+  vertical-align: text-bottom;
 }
 
 @media screen and (min-width: 600px) {
