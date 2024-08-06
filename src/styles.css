@@ -11,6 +11,7 @@ body {
 .main-header {
   position: sticky;
   top: 0;
+  z-index: 100;
 }
 
 .navbar {
@@ -40,6 +41,7 @@ body {
   font-weight: 250;
   font-size: 1.25rem;
   margin-top: 0;
+  margin-bottom: 17px;
 }
 
 .genus, .species {
@@ -61,6 +63,8 @@ a:hover {
 
 .prev, .next {
   font-size: .8rem;
+  margin-bottom: 17px;
+  display: inline-block;
 }
 
 .prev {
@@ -123,6 +127,7 @@ ul {
   list-style-type: square;
   list-style-position: inside;
   padding-left: 0;
+  margin-bottom: 17px;
 }
 
 .index {
@@ -149,23 +154,14 @@ ul {
   padding: 15px;
 }
 
-.main-footer {
-  margin-top: 20px;
-  display: flex;
-  justify-content: center;
-}
-
 .license {
-  margin: 0;
-}
-
-.license-link {
-  display: inline-block;
+  margin: 15px;
+  font-size: .9rem;
 }
 
 .license-image {
   height: 1.2rem;
-  margin-left: 3px;
+  margin-left: 2px;
   vertical-align: text-bottom;
 }
 
