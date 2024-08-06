@@ -59,6 +59,18 @@ a:hover {
   filter: brightness(50%);
 }
 
+.prev, .next {
+  font-size: .8rem;
+}
+
+.prev {
+  margin-right: 3px;
+}
+
+.next {
+  margin-left: 3px;
+}
+
 .navbar, .row1, .row2, .index-container  {
   border-bottom: 1px solid hsl(0, 0%, 85%);
   background-color: hsl(0, 0%, 95%);

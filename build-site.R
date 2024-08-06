@@ -194,12 +194,20 @@ for (page in list.files("src", recursive = TRUE, pattern = "content.yml")) {
                 div(
                   if (length(prev_taxon)) {
 
-                    a("\u25C2 Prev-", href = file.path("", prev_taxon))
+                    a(
+                      class = "prev",
+                      "\u25C2 Prev",
+                      href = file.path("", prev_taxon)
+                    )
 
                   },
                   if (!is.na(next_taxon)) {
 
-                    a("-Next \u25B8", href = file.path("", next_taxon))
+                    a(
+                      class = "next",
+                      "Next \u25B8",
+                      href = file.path("", next_taxon)
+                    )
 
                   }
                 ),
