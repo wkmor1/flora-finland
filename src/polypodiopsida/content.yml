@@ -7,3 +7,8 @@ description: Megaphyllous perennials with free living gametophytes and sporangia
 sources:
 - type: url
   value: https://en.wikipedia.org/wiki/Fern
+images:
+- file: img0.jpeg
+  src: https://www.inaturalist.org/photos/323201614
+  alt: Eurasian ladyfern (Athyrium filix-femina) sporangia
+  caption: <span class="species">Athyrium filix-femina</span> sporangia
