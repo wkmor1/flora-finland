@@ -89,7 +89,7 @@ front_page <- htmltools::withTags(
                     class = "main-figcaption-content",
                     summary(
                       class = "main-figcaption-button",
-                      htmltools::HTML("&#x1F6C8;")
+                      htmltools::HTML("&#9432;")
                     ),
                     p(
                       class = "main-figcaption-text",
