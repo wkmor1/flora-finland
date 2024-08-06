@@ -22,6 +22,7 @@ css <- htmltools::withTags(
 
 nav_bar <- htmltools::withTags(
   header(
+    class = "main-header",
     nav(
       class = "navbar",
       a(href = "/", class = "nav-home", "Flora of Finland"),
@@ -46,7 +47,23 @@ front_page <- htmltools::withTags(
             # image
             div(
               class = "col2",
-              img(src = "/img0.jpeg")
+              figure(
+                class = "main-figure",
+                img(
+                  class = "main-img", src = "/img0.jpeg",
+                  alt = "Pitkäjärvi, Enontekiö"
+                ),
+                figcaption(
+                  class = "main-figcaption",
+                  details(
+                    class = "main-figcaption-content",
+                    summary(class = "main-figcaption-button", "🛈"),
+                    p(
+                      class = "main-figcaption-text", "Pitkäjärvi, Enontekiö"
+                    )
+                  )
+                )
+              )
             ),
             div(
               class = "col1",
@@ -132,7 +149,10 @@ for (page in list.files("src", recursive = TRUE, pattern = "content.yml")) {
               # image
               div(
                 class = "col2",
-                img(src = content[["images"]][[1L]][["file"]])
+                img(
+                  class = "main-image",
+                  src = content[["images"]][[1L]][["file"]]
+                )
               ),
               div(
                 class = "col1",
