@@ -31,10 +31,18 @@ body {
   font-size: 1rem;
 }
 
+.rank {
+  font-size: .9rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  background-color: hsl(0, 0%, 90%);
+  padding: 3px;
+}
+
 .page-title {
   font-weight: 350;
   font-size: 2.5rem;
-  margin-bottom: 0;
+  margin: 0;
 }
 
 .subtitle {
@@ -42,6 +50,13 @@ body {
   font-size: 1.25rem;
   margin-top: 0;
   margin-bottom: 17px;
+}
+
+.taxa-list-title {
+  font-size: .9rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  margin-bottom: 0;
 }
 
 .genus, .species {
@@ -59,6 +74,16 @@ a {
 
 a:hover {
   filter: brightness(50%);
+}
+
+.nav-parent {
+  margin-bottom: 30px;
+  display: inline-block;
+}
+
+.parent-taxa-rank {
+  text-transform: uppercase;
+  font-weight: 300;
 }
 
 .prev, .next {
@@ -86,6 +111,7 @@ a:hover {
 
 .main-img {
   max-width: 100%;
+  min-width: 330px;
   display: block;
   margin: 0;
 }
@@ -128,6 +154,7 @@ ul {
   list-style-position: inside;
   padding-left: 0;
   margin-bottom: 17px;
+  margin-top: 5px;
 }
 
 .index {
@@ -194,6 +221,10 @@ ul {
 
   .subtitle {
     font-size: 1.5rem;
+  }
+
+  .main-img {
+    min-width: 100px;
   }
 
 }

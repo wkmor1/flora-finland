@@ -6,11 +6,13 @@ file.copy("src/styles.css", "build/styles.css", overwrite = TRUE)
 
 file.copy("src/img0.jpeg", "build/img0.jpeg", overwrite = TRUE)
 
-ranks <- c("class", "order", "family", "genus", "species")
-
-child_ranks <- setNames(ranks[-1], ranks[-5])
-
-parent_ranks <- setNames(ranks[-5], ranks[-1])
+ranks <- list(
+  class   = c(plural = "classes:",  child = "order",      parent = "phylum"),
+  order   = c(plural = "orders:",   child = "family",     parent = "class"),
+  family  = c(plural = "families:", child = "genus",      parent = "order"),
+  genus   = c(plural = "genera:",   child = "species",    parent = "family"),
+  species = c(plural = "species:",  child = "subspecies", parent = "genus")
+)
 
 viewport <- htmltools::withTags(
   meta(name = "viewport", content = "width=device-width, initial-scale=1.0")
@@ -103,6 +105,7 @@ front_page <- htmltools::withTags(
               class = "col1",
               # taxon name
               div(
+                span("phylum", class = "rank"),
                 h1(
                   class = "page-title",
                   "Tracheophyta"
@@ -111,6 +114,10 @@ front_page <- htmltools::withTags(
               ),
               # child taxa
               div(
+                h3(
+                  class = "taxa-list-title",
+                  "Classes"
+                ),
                 ul(
                   lapply(
                     mapply(
@@ -209,7 +216,12 @@ for (page in list.files("src", recursive = TRUE, pattern = "content.yml")) {
                       ),
                       p(
                         class = "main-figcaption-text",
-                        htmltools::HTML(content[["images"]][[1L]][["caption"]])
+                        htmltools::HTML(content[["images"]][[1L]][["caption"]]),
+                        " | ",
+                        a(
+                          "Source",
+                          href = content[["images"]][[1L]][["src"]]
+                        )
                       )
                     )
                   )
@@ -221,10 +233,15 @@ for (page in list.files("src", recursive = TRUE, pattern = "content.yml")) {
                 if (basename(dirname(taxon)) != ".") {
                   div(
                     a(
+                      class = "nav-parent",
                       "\u2190",
                       span(
+                        class = "parent-taxa-rank",
+                        sprintf("%s:", ranks[[c(rank, "parent")]])
+                      ),
+                      span(
                         stringr::str_to_sentence(basename(dirname(taxon))),
-                        class = parent_ranks[[rank]]
+                        class = ranks[[c(rank, "parent")]]
                       ),
                       href = file.path("", dirname(taxon))
                     )
@@ -232,7 +249,12 @@ for (page in list.files("src", recursive = TRUE, pattern = "content.yml")) {
                 } else {
                   div(
                     a(
+                      class = "nav-parent",
                       "\u2190",
+                      span(
+                        class = "parent-taxa-rank",
+                        "phylum:"
+                      ),
                       span("Tracheophyta", class ="phylum"),
                       href = "/"
                     )
@@ -240,6 +262,7 @@ for (page in list.files("src", recursive = TRUE, pattern = "content.yml")) {
                 },
                 # taxon name
                 div(
+                  if (rank != "species") span(rank, class = "rank"),
                   h1(
                     class = "page-title",
                     span(name, class = rank)
@@ -271,6 +294,10 @@ for (page in list.files("src", recursive = TRUE, pattern = "content.yml")) {
                 ),
                 # child taxa
                 if (length(taxa)) div(
+                  h3(
+                    class = "taxa-list-title",
+                    ranks[[c(ranks[[c(rank, "child")]], "plural")]]
+                  ),
                   ul(
                     lapply(
                       mapply(
@@ -278,7 +305,7 @@ for (page in list.files("src", recursive = TRUE, pattern = "content.yml")) {
                         lapply(
                           gsub("_", " ", stringr::str_to_sentence(taxa)),
                           span,
-                          class = child_ranks[[rank]]
+                          class = ranks[[c(rank, "child")]]
                         ),
                         href = paste0(taxa, "/"),
                         SIMPLIFY = FALSE,
