@@ -11,4 +11,4 @@ images:
 - file: img0.jpeg
   src: https://www.inaturalist.org/photos/290483269
   alt: Common woodfern (Dryopteris filix-mas) sporangia
-  caption: <span>Dryopteris filix-mas</span> sporangia
+  caption: <span class="species">Dryopteris filix-mas</span> sporangia
