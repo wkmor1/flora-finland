@@ -141,6 +141,13 @@ front_page <- htmltools::withTags(
               )
             )
           ),
+          article(
+            class = "row2",
+            p(
+              class = "description",
+              "Plants with vascular tissue and dominant sporophyte generations."
+            )
+          ),
           page_footer
         )
       )
