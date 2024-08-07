@@ -6,6 +6,8 @@ file.copy("src/styles.css", "build/styles.css", overwrite = TRUE)
 
 file.copy("src/img0.jpeg", "build/img0.jpeg", overwrite = TRUE)
 
+file.copy("src/map.svg", "build/map.svg", overwrite = TRUE)
+
 ranks <- list(
   class   = c(plural = "classes:",  child = "order",      parent = "phylum"),
   order   = c(plural = "orders:",   child = "family",     parent = "class"),
@@ -141,11 +143,21 @@ front_page <- htmltools::withTags(
               )
             )
           ),
-          article(
+          div(
             class = "row2",
-            p(
-              class = "description",
-              "Plants with vascular tissue and dominant sporophyte generations."
+            article(
+              class = "col2",
+              p(
+                class = "description",
+                "Plants with vascular tissue and dominant sporophyte generations."
+              )
+            ),
+            div(
+              class = "col1",
+              figure(
+                class = "map-figure",
+                img(class = "map", src = "map.svg")
+              )
             )
           ),
           page_footer
@@ -325,9 +337,21 @@ for (page in list.files("src", recursive = TRUE, pattern = "content.yml")) {
               )
             ),
             # description
-            if (!is.null(content[["description"]])) article(
+            div(
               class = "row2",
-              p(class = "description", content[["description"]])
+              article(
+                class = "col2",
+                if (!is.null(content[["description"]])) {
+                  p(class = "description", content[["description"]])
+                }
+              ),
+              div(
+                class = "col1",
+                figure(
+                  class = "map-figure",
+                  img(class = "map", src = "map.svg")
+                )
+              )
             ),
             page_footer
           )
@@ -345,6 +369,12 @@ for (page in list.files("src", recursive = TRUE, pattern = "content.yml")) {
   file.copy(
     file.path("src", taxon, "img0.jpeg"),
     file.path("build", taxon, "img0.jpeg"),
+    overwrite = TRUE
+  )
+
+  file.copy(
+    file.path("src", taxon, "map.svg"),
+    file.path("build", taxon, "map.svg"),
     overwrite = TRUE
   )
 

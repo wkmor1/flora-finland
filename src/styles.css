@@ -106,17 +106,22 @@ a:hover {
 }
 
 .row2 {
-  padding: 5px 15px;
+  padding-bottom: 15px;
 }
 
 .main-img {
   max-width: 100%;
-  min-width: 330px;
   display: block;
   margin: 0;
 }
 
-.main-figure {
+.map {
+  max-width: 180px;
+  display: block;
+  margin: 0;
+}
+
+.main-figure, .map-figure {
   margin: 0;
   position: relative;
 }
@@ -163,6 +168,8 @@ ul {
 
 .description {
   font-size: 1.3rem;
+  margin: 0px;
+  padding: 15px;
 }
 
 .author {
@@ -171,8 +178,8 @@ ul {
 }
 
 .col1 {
-  padding-top: 15px;
-  padding-left: 15px;
+  padding-top: 19px;
+  padding-left: 19px;
 }
 
 .index-container {
@@ -194,20 +201,35 @@ ul {
 
 @media screen and (min-width: 600px) {
 
-  .row1 {
+  .row1, .row2 {
     display: flex;
     justify-content: space-between;
   }
 
   .col1 {
-    flex: .45;
+    flex: 1;
     margin-right: 10px;
+  }
+
+  .row1 .col1 {
     align-self: flex-end;
   }
 
+  .row2 .col1 {
+    align-self: flex-start;
+  }
+
+
   .col2 {
     order: 1;
-    flex: .55;
+  }
+
+  .row1 .col2 {
+    flex: 1.2;
+  }
+
+  .row2 .col2 {
+    flex: 6.5;
   }
 
   .page-title {
@@ -224,7 +246,7 @@ ul {
   }
 
   .main-img {
-    min-width: 100px;
+    min-width: 330px;
   }
 
 }
