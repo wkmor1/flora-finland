@@ -116,7 +116,7 @@ a:hover {
 }
 
 .map {
-  max-width: 180px;
+  max-width: 100%;
   display: block;
   margin: 0;
 }
@@ -188,6 +188,10 @@ ul {
   padding: 15px;
 }
 
+.row2 {
+  padding-right: 19px;
+}
+
 .license {
   margin: 15px;
   font-size: .9rem;
@@ -247,6 +251,10 @@ ul {
 
   .main-img {
     min-width: 330px;
+  }
+
+  .map {
+    max-width: 180px;
   }
 
 }
