@@ -16,6 +16,13 @@ ranks <- list(
   species = c(plural = "species:",  child = "subspecies", parent = "genus")
 )
 
+map_source <- file.path(
+  "https://laji.fi",
+  "en",
+  "observation",
+  "finnish?target=%s&countryId=ML.206&collectionId=HR.90,HR.169,HR.3551,HR.767"
+)
+
 viewport <- htmltools::withTags(
   meta(name = "viewport", content = "width=device-width, initial-scale=1.0")
 )
@@ -45,18 +52,18 @@ page_footer <- htmltools::withTags(
       "This website is marked with",
       a(
         class = "license-link",
-        href = "https://creativecommons.org/publicdomain/zero/1.0/?ref=chooser-v1",
+        href = "https://creativecommons.org/publicdomain/zero/1.0/",
         target = "_blank",
         rel = "license noopener noreferrer",
         "CC0 1.0 Universal",
         img(
           class = "license-image",
-          src = "https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1",
+          src = "https://mirrors.creativecommons.org/presskit/icons/cc.svg",
           alt = ""
         ),
         img(
           class = "license-image",
-          src = "https://mirrors.creativecommons.org/presskit/icons/zero.svg?ref=chooser-v1",
+          src = "https://mirrors.creativecommons.org/presskit/icons/zero.svg",
           alt = ""
         )
       )
@@ -81,22 +88,22 @@ front_page <- htmltools::withTags(
             div(
               class = "col2",
               figure(
-                class = "main-figure",
+                class = "figure",
                 img(
                   class = "main-img",
                   src = "/img0.jpeg",
                   alt = "Pitkäjärvi, Enontekiö"
                 ),
                 figcaption(
-                  class = "main-figcaption",
+                  class = "figcaption",
                   details(
-                    class = "main-figcaption-content",
+                    class = "figcaption-content",
                     summary(
-                      class = "main-figcaption-button",
+                      class = "figcaption-button",
                       htmltools::HTML("&#9432;")
                     ),
                     p(
-                      class = "main-figcaption-text",
+                      class = "figcaption-text",
                       "Pitkäjärvi, Enontekiö"
                     )
                   )
@@ -155,8 +162,25 @@ front_page <- htmltools::withTags(
             div(
               class = "col1",
               figure(
-                class = "map-figure",
-                img(class = "map", src = "map.svg")
+                class = "figure",
+                img(class = "map", src = "map.svg"),
+                figcaption(
+                  class = "figcaption",
+                  details(
+                    class = "figcaption-content",
+                    summary(
+                      class = "figcaption-button",
+                      htmltools::HTML("&#9432;")
+                    ),
+                    p(
+                      class = "figcaption-text",
+                      a(
+                        "Source",
+                        href = sprintf(map_source, "MX.53078")
+                      )
+                    )
+                  )
+                )
               )
             )
           ),
@@ -219,22 +243,22 @@ for (page in list.files("src", recursive = TRUE, pattern = "content.yml")) {
               div(
                 class = "col2",
                 if (!is.null(content[["images"]])) figure(
-                  class = "main-figure",
+                  class = "figure",
                   img(
                     class = "main-img",
                     src = content[["images"]][[1L]][["file"]],
                     alt = content[["images"]][[1L]][["alt"]]
                   ),
                   figcaption(
-                    class = "main-figcaption",
+                    class = "figcaption",
                     details(
-                      class = "main-figcaption-content",
+                      class = "figcaption-content",
                       summary(
-                        class = "main-figcaption-button",
+                        class = "figcaption-button",
                         htmltools::HTML("&#9432;")
                       ),
                       p(
-                        class = "main-figcaption-text",
+                        class = "figcaption-text",
                         htmltools::HTML(content[["images"]][[1L]][["caption"]]),
                         " | ",
                         a(
@@ -348,8 +372,27 @@ for (page in list.files("src", recursive = TRUE, pattern = "content.yml")) {
               div(
                 class = "col1",
                 figure(
-                  class = "map-figure",
-                  img(class = "map", src = "map.svg")
+                  class = "figure",
+                  img(class = "map", src = "map.svg"),
+                  figcaption(
+                    class = "figcaption",
+                    details(
+                      class = "figcaption-content",
+                      summary(
+                        class = "figcaption-button",
+                        htmltools::HTML("&#9432;")
+                      ),
+                      p(
+                        class = "figcaption-text",
+                        a(
+                          "Source",
+                          href = sprintf(
+                            map_source, content[["finbifID"]]
+                          )
+                        )
+                      )
+                    )
+                  )
                 )
               )
             ),
