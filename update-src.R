@@ -1,4 +1,10 @@
-options(finbif_cache_path = "cache", finbif_rate_limit = Inf)
+future::plan(future::multisession, workers = 2)
+
+options(
+  finbif_cache_path = "cache",
+  finbif_rate_limit = Inf,
+  finbif_hide_progress = TRUE
+)
 
 checklist <- read.csv("checklist.csv")
 
@@ -21,28 +27,31 @@ finland <- readRDS("finland.rds")
 
 p <- finbif::finbif_occurrence(
   "Tracheophyta",
-  filter = c(country = "Finland", collection = "HR.90"),
-  select = c(x = "lon_50_center_ykj", y = "lat_50_center_ykj"),
+  filter = list(
+    country = "Finland", collection = c("HR.90", "HR.169", "HR.3551", "HR.767")
+  ),
+  select = c(x = "lon_10_center_ykj", y = "lat_10_center_ykj"),
   aggregate = "records",
   aggregate_counts = FALSE,
   n = "all"
 )
 
-p <- transform(p, x = ifelse(y %% 2, x + 2.5, x))
-
 p <- sf::st_as_sf(p * 1e4, coords = c("x", "y"), crs = 2393)
 
-p <- sf::st_transform(p, crs = 3067)
+p <- sf::st_intersection(p, sf::st_buffer(finland, 5000))
+
+r <- terra::rast(terra::vect(p), res = c(1e4, 1e4))
+
+p <- terra::rasterize(terra::vect(p), r)
 
 gg <-
   ggplot2::ggplot() +
-  ggplot2::geom_sf(data = p, shape = "\u2b22", size = 9, color = "grey30") +
-  ggplot2::geom_sf(data = finland, fill = "grey90") +
-  ggplot2::coord_sf(
-    xlim = c(60000, 760000), ylim = c(6600000, 7800000), expand = FALSE
+  tidyterra::geom_spatraster(data = p, show.legend = FALSE) +
+  ggplot2::scale_fill_continuous(
+    low = "sienna", high = "sienna", na.value = "transparent"
   ) +
-  ggplot2::theme_void() +
-  ggplot2::theme(panel.background = ggplot2::element_rect(fill = "grey90"))
+  ggplot2::geom_sf(data = finland, fill = "transparent", color = "darkslategrey") +
+  ggplot2::theme_void()
 
 svglite::svglite(file.path("src", "map.svg"), width = 5, bg = "grey90")
 
@@ -84,28 +93,30 @@ for (page in list.dirs("src")[-1]) {
 
   p <- finbif::finbif_occurrence(
     content[["finbifID"]],
-    filter = c(country = "Finland", collection = "HR.90"),
-    select = c(x = "lon_50_center_ykj", y = "lat_50_center_ykj"),
+    filter  = list(
+      country = "Finland",
+      collection = c("HR.90", "HR.169", "HR.3551", "HR.767")
+    ),
+    select = c(x = "lon_10_center_ykj", y = "lat_10_center_ykj"),
     aggregate = "records",
     aggregate_counts = FALSE,
     n = "all"
   )
 
-  p <- transform(p, x = ifelse(y %% 2, x + 2.5, x))
-
   p <- sf::st_as_sf(p * 1e4, coords = c("x", "y"), crs = 2393)
 
-  p <- sf::st_transform(p, crs = 3067)
+  p <- sf::st_intersection(p, sf::st_buffer(finland, 5000))
+
+  p <- terra::rasterize(terra::vect(p), r)
 
   gg <-
     ggplot2::ggplot() +
-    ggplot2::geom_sf(data = p, shape = "\u2b22", size = 9, color = "grey30") +
-    ggplot2::geom_sf(data = finland, fill = "grey90") +
-    ggplot2::coord_sf(
-      xlim = c(60000, 760000), ylim = c(6600000, 7800000), expand = FALSE
+    tidyterra::geom_spatraster(data = p, show.legend = FALSE) +
+    ggplot2::scale_fill_continuous(
+      low = "sienna", high = "sienna", na.value = "transparent"
     ) +
-    ggplot2::theme_void() +
-    ggplot2::theme(panel.background = ggplot2::element_rect(fill = "grey90"))
+    ggplot2::geom_sf(data = finland, fill = "transparent", color = "darkslategrey") +
+    ggplot2::theme_void()
 
   svglite::svglite(file.path(page, "map.svg"), width = 5, bg = "grey90")
 
