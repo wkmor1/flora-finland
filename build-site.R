@@ -95,15 +95,15 @@ front_page <- htmltools::withTags(
                   alt = "Pitkäjärvi, Enontekiö"
                 ),
                 figcaption(
-                  class = "figcaption",
+                  class = "info",
                   details(
-                    class = "figcaption-content",
+                    class = "info-content",
                     summary(
-                      class = "figcaption-button",
+                      class = "info-button",
                       htmltools::HTML("&#9432;")
                     ),
                     p(
-                      class = "figcaption-text",
+                      class = "info-text",
                       "Pitkäjärvi, Enontekiö"
                     )
                   )
@@ -157,6 +157,20 @@ front_page <- htmltools::withTags(
               p(
                 class = "description",
                 "Plants with vascular tissue and dominant sporophyte generations."
+              ),
+              div(
+                class = "info",
+                details(
+                  class = "info-content",
+                  summary(
+                    class = "info-button",
+                    htmltools::HTML("&#9432;")
+                  ),
+                  p(
+                    class = "info-text",
+                    "Sources"
+                  )
+                )
               )
             ),
             div(
@@ -165,15 +179,15 @@ front_page <- htmltools::withTags(
                 class = "figure",
                 img(class = "map", src = "map.svg"),
                 figcaption(
-                  class = "figcaption",
+                  class = "info",
                   details(
-                    class = "figcaption-content",
+                    class = "info-content",
                     summary(
-                      class = "figcaption-button",
+                      class = "info-button",
                       htmltools::HTML("&#9432;")
                     ),
                     p(
-                      class = "figcaption-text",
+                      class = "info-text",
                       a(
                         "Source",
                         href = sprintf(map_source, "MX.53078")
