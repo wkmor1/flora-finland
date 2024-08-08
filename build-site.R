@@ -264,15 +264,15 @@ for (page in list.files("src", recursive = TRUE, pattern = "content.yml")) {
                     alt = content[["images"]][[1L]][["alt"]]
                   ),
                   figcaption(
-                    class = "figcaption",
+                    class = "info",
                     details(
-                      class = "figcaption-content",
+                      class = "info-content",
                       summary(
-                        class = "figcaption-button",
+                        class = "info-button",
                         htmltools::HTML("&#9432;")
                       ),
                       p(
-                        class = "figcaption-text",
+                        class = "info-text",
                         htmltools::HTML(content[["images"]][[1L]][["caption"]]),
                         " | ",
                         a(
@@ -389,15 +389,15 @@ for (page in list.files("src", recursive = TRUE, pattern = "content.yml")) {
                   class = "figure",
                   img(class = "map", src = "map.svg"),
                   figcaption(
-                    class = "figcaption",
+                    class = "info",
                     details(
-                      class = "figcaption-content",
+                      class = "info-content",
                       summary(
-                        class = "figcaption-button",
+                        class = "info-button",
                         htmltools::HTML("&#9432;")
                       ),
                       p(
-                        class = "figcaption-text",
+                        class = "info-text",
                         a(
                           "Source",
                           href = sprintf(
