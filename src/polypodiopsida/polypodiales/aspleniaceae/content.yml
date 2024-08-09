@@ -2,3 +2,15 @@ finbifID: MX.37782
 vernacularName: Spleenworts
 scientificName: Aspleniaceae
 taxonRank: family
+description: Ferns with stipes having back-to-back C-shaped vascular bundles
+  that are fused into an X-shape towards the blade. Their sori, found alongside
+  veins, are elongate with laterally attached flap-like linear indusia.
+sources:
+- ref: Smith, A. R., et al. (2006). A classification for extant ferns.
+    <span class="journal">Taxon</span>, 55(3), 705-731.
+  doi: 10.2307/25065646
+images:
+- file: img0.jpeg
+  src: https://www.inaturalist.org/photos/98673305
+  alt: Asplenium trichomanes growing in Kuparivuori, Naantali
+  caption: <span class="species">Asplenium trichomanes</span> (Kuparivuori, Naantali)
