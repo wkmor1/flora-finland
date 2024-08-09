@@ -156,21 +156,8 @@ front_page <- htmltools::withTags(
               class = "col2",
               p(
                 class = "description",
-                "Plants with vascular tissue and dominant sporophyte generations."
-              ),
-              div(
-                class = "info",
-                details(
-                  class = "info-content",
-                  summary(
-                    class = "info-button",
-                    htmltools::HTML("&#9432;")
-                  ),
-                  p(
-                    class = "info-text",
-                    "Sources"
-                  )
-                )
+                "Plants with vascular tissue and dominant sporophyte",
+                "generations."
               )
             ),
             div(
@@ -194,6 +181,25 @@ front_page <- htmltools::withTags(
                       )
                     )
                   )
+                )
+              )
+            )
+          ),
+          div(
+            class = "row3",
+            ol(
+              class = "refs",
+              h3(class = "refs-title", "References:"),
+              li(
+                "Cavalier-Smith, T. (1998).",
+                "A revised six-kingdom system of life.",
+                htmltools::HTML(
+                  "<span class=\"journal\">Biological Reviews</span>,"
+                ),
+                "73(3), 203-266.",
+                a(
+                  href ="https://doi.org/10.1111/j.1469-185X.1998.tb00030.x",
+                  "doi:10.1111/j.1469-185X.1998.tb00030.x"
                 )
               )
             )
@@ -242,6 +248,26 @@ for (page in list.files("src", recursive = TRUE, pattern = "content.yml")) {
   next_taxon <- siblings[which(siblings == taxon) + 1L]
 
   taxa <- list.dirs(page_dir, recursive = FALSE, full.names = FALSE)
+
+  refs <- htmltools::withTags(
+    lapply(
+      content[["sources"]],
+      \ (x) {
+        mapply(
+          \(ref, doi) {
+            li(
+              htmltools::HTML(ref),
+              a(href = file.path("https://doi.org", doi), "doi:", doi)
+            )
+          },
+          x[["ref"]],
+          x[["doi"]],
+          SIMPLIFY = FALSE,
+          USE.NAMES = FALSE
+        )
+      }
+    )
+  )
 
   taxon_page <- htmltools::withTags(
     htmltools::tagList(
@@ -408,6 +434,14 @@ for (page in list.files("src", recursive = TRUE, pattern = "content.yml")) {
                     )
                   )
                 )
+              )
+            ),
+            div(
+              class = "row3",
+              ol(
+                class = "refs",
+                h3(class = "refs-title", "References:"),
+                refs
               )
             ),
             page_footer

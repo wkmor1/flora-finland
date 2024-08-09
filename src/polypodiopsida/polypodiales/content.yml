@@ -5,8 +5,9 @@ taxonRank: order
 description: Ferns bearing sporangia with vertical annuli interrupted by the stalk
   and stomium.
 sources:
-- type: doi
-  value: 10.2307/25065646
+- ref: Smith, A. R., et al. (2006). A classification for extant ferns.
+    <span class="journal">Taxon</span>, 55(3), 705-731.
+  doi: 10.2307/25065646
 images:
 - file: img0.jpeg
   src: https://www.inaturalist.org/photos/290483269

@@ -59,7 +59,7 @@ body {
   margin-bottom: 0;
 }
 
-.genus, .species {
+.genus, .species, .journal {
   font-style: italic;
 }
 
@@ -100,13 +100,18 @@ a:hover {
   margin-left: 3px;
 }
 
-.navbar, .row1, .row2, .index-container  {
+.navbar, .row1, .row2, .row3, .index-container {
   border-bottom: 1px solid hsl(0, 0%, 85%);
   background-color: hsl(0, 0%, 95%);
 }
 
 .row2 {
+  padding-right: 19px;
   padding-bottom: 15px;
+}
+
+.row3 {
+  padding: 19px;
 }
 
 .main-img {
@@ -189,12 +194,22 @@ ul {
   padding: 15px;
 }
 
-.row2 {
-  padding-right: 19px;
+.refs {
+  font-size: .95rem;
+  list-style-position: inside;
+  padding-left: 0;
 }
 
-.row2 .col2 {
-  position: relative;
+.refs li::marker {
+  color: hsl(0, 0%, 40%);
+}
+
+.refs-title {
+  color: hsl(0, 0%, 40%);
+  font-weight: 500;
+  font-size: .95rem;
+  margin: 0;
+  padding-bottom: 3px;
 }
 
 .license {
