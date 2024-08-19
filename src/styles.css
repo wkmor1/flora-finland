@@ -135,17 +135,26 @@ a:hover {
   position: absolute;
   bottom: 0;
   right: 0;
-  background-color: rgba(242,242,242, .7);
+}
+
+.info-content {
+  position: relative;
+  z-index: 50;
+  background-color: rgba(242, 242, 242, .7);
 }
 
 .info-button {
   list-style: none;
   float: right;
-  display: inline-block;
+  display: block;
   line-height: 1.5;
   padding: 1px 3px;
   cursor: pointer;
   font-weight: 600;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(242, 242, 242, .7);
 }
 
 .info-button::-webkit-details-marker {
@@ -156,7 +165,10 @@ a:hover {
   margin: 0;
   display: inline-block;
   line-height: 1.5;
-  padding: 1px 3px;
+  padding-top: 1px;
+  padding-left: 3px;
+  padding-bottom: 1px;
+  padding-right: 1.5rem;
 }
 
 ul {
