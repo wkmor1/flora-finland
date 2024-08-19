@@ -2,3 +2,8 @@ finbifID: MX.37748
 vernacularName: Shieldferns
 scientificName: Dryopteridaceae
 taxonRank: family
+images:
+- file: img0.jpeg
+  src: https://www.inaturalist.org/photos/421214165
+  alt:  Common woodfern (Dryopteris filix-mas) sporangia
+  caption: <span class="species">Dryopteris filix-mas</span> sporangia
