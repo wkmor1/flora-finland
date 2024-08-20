@@ -3,5 +3,7 @@ vernacularName: Eurasian ladyfern
 images:
 - file: img0.jpeg
   src: https://www.inaturalist.org/photos/414114860
+  alt: Eurasian ladyfern (Athyrium filix-femina) growing on Reposaari, Pori
+  caption: <span class="species">Athyrium filix-femina</span> (Reposaari, Pori)
 scientificName: Athyrium filix-femina
 taxonRank: species
