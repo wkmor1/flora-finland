@@ -2,3 +2,8 @@ finbifID: MX.37785
 vernacularName: Delicate maidenhair spleenwort
 scientificName: Asplenium trichomanes
 taxonRank: species
+images:
+- file: img0.jpeg
+  src: https://www.inaturalist.org/photos/91462074
+  alt: Delicate maidenhair spleenwort (Asplenium trichomanes) growing in Pyölynmäki, Salo
+  caption: <span class="species">Asplenium trichomanes</span> (Pyölynmäki, Salo)
