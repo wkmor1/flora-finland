@@ -2,3 +2,8 @@ finbifID: MX.37789
 vernacularName: Forked spleenwort
 scientificName: Asplenium septentrionale
 taxonRank: species
+images:
+- file: img0.jpeg
+  src: https://www.inaturalist.org/photos/421892846
+  alt: Forked spleenwort (Asplenium septentrionale) growing in growing in Töölö, Helsinki
+  caption: <span class="species">Asplenium septentrionale</span> (Töölö, Helsinki)
