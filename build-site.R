@@ -23,6 +23,31 @@ map_source <- file.path(
   "finnish?target=%s&countryId=ML.206&collectionId=HR.90,HR.169,HR.3551,HR.767"
 )
 
+link2glossary <- function(text) {
+
+  matches <- regmatches(text, gregexpr("_(.*?)_", text))[[1L]]
+
+  terms <- gsub("_", "", matches)
+
+  for (i in seq_along(matches)) {
+
+    text <- sub(
+      matches[[i]],
+      sprintf(
+        "<a href=\"/glossary#%s\">%s</a>",
+        gsub(" ", "-", terms[[1L]]),
+        terms[[i]]
+      ),
+      text
+    )
+
+  }
+
+  htmltools::HTML(text)
+
+}
+
+
 viewport <- htmltools::withTags(
   meta(name = "viewport", content = "width=device-width, initial-scale=1.0")
 )
@@ -36,8 +61,17 @@ nav_bar <- htmltools::withTags(
     class = "main-header",
     nav(
       class = "navbar",
+      role = "navigation",
       a(href = "/", class = "nav-home", "Flora of Finland"),
-      a(href ="/taxa-index", class = "nav-link", "Index")
+      div(
+        class = "nav-links",
+        span(class = "dropdown", "☰"),
+        ul(
+          class = "nav-link-list",
+          li(class = "nav-link", a(href ="/glossary", "Glossary")),
+          li(class = "nav-link", a(href ="/taxa-index", "Index"))
+        )
+      )
     )
   )
 )
@@ -156,8 +190,12 @@ front_page <- htmltools::withTags(
               class = "col2",
               p(
                 class = "description",
-                "Plants with vascular tissue and dominant sporophyte",
-                "generations."
+                link2glossary(
+                  paste(
+                    "Plants with _vascular tissue_ and dominant _sporophyte_",
+                    "generations."
+                  )
+                )
               )
             ),
             div(
@@ -537,3 +575,40 @@ dir.create(
 )
 
 htmltools::save_html(index_page, file.path("build", "taxa-index/index.html"))
+
+# glossary
+glossary <- yaml::yaml.load_file("src/glossary.yml")
+
+glossary_page <- htmltools::withTags(
+  htmltools::tagList(
+    head(title("Glossary"), viewport, css),
+    body(
+      main(
+        class = "main",
+        nav_bar,
+        div(
+          class = "glossary-container",
+          dl(
+            class = "glossary",
+            lapply(
+              glossary,
+              \(x) {
+                list(
+                  dt(id = gsub(" ", "-", tolower(x[["term"]])), x[["term"]]),
+                  dd(x[["definition"]])
+                )
+              }
+            )
+          )
+        ),
+        page_footer
+      )
+    )
+  )
+)
+
+dir.create(
+  file.path("build", "glossary"), showWarnings = FALSE, recursive = TRUE
+)
+
+htmltools::save_html(glossary_page, file.path("build", "glossary/index.html"))
