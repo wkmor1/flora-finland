@@ -47,13 +47,20 @@ link2glossary <- function(text) {
 
 }
 
-
 viewport <- htmltools::withTags(
   meta(name = "viewport", content = "width=device-width, initial-scale=1.0")
 )
 
 css <- htmltools::withTags(
   link(rel = "stylesheet", type = "text/css", href = "/styles.css")
+)
+
+nav_links <- htmltools::withTags(
+  ul(
+    class = "nav-link-list",
+    li(class = "nav-link", a(href ="/glossary", "Glossary")),
+    li(class = "nav-link", a(href ="/taxa-index", "Index"))
+  )
 )
 
 nav_bar <- htmltools::withTags(
@@ -66,20 +73,9 @@ nav_bar <- htmltools::withTags(
       details(
         class = "nav-links-dropdown",
         summary(class = "dropdown", "☰"),
-        ul(
-          class = "nav-link-list",
-          li(class = "nav-link", a(href ="/glossary", "Glossary")),
-          li(class = "nav-link", a(href ="/taxa-index", "Index"))
-        )
+        nav_links
       ),
-      div(
-        class = "nav-links",
-        ul(
-          class = "nav-link-list",
-          li(class = "nav-link", a(href ="/glossary", "Glossary")),
-          li(class = "nav-link", a(href ="/taxa-index", "Index"))
-        )
-      )
+      div(class = "nav-links", nav_links)
     )
   )
 )
