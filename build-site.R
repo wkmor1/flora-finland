@@ -63,9 +63,17 @@ nav_bar <- htmltools::withTags(
       class = "navbar",
       role = "navigation",
       a(href = "/", class = "nav-home", "Flora of Finland"),
+      details(
+        class = "nav-links-dropdown",
+        summary(class = "dropdown", "☰"),
+        ul(
+          class = "nav-link-list",
+          li(class = "nav-link", a(href ="/glossary", "Glossary")),
+          li(class = "nav-link", a(href ="/taxa-index", "Index"))
+        )
+      ),
       div(
         class = "nav-links",
-        span(class = "dropdown", "☰"),
         ul(
           class = "nav-link-list",
           li(class = "nav-link", a(href ="/glossary", "Glossary")),

@@ -28,13 +28,17 @@ body {
   font-size: 2rem;
 }
 
+.nav-links {
+  display: none;
+}
+
 .nav-link-list {
   margin: 0;
   display: none;
   padding-top: 5px;
 }
 
-.nav-links:hover > .nav-link-list, .nav-link-list:hover {
+.nav-links-dropdown[open] > .nav-link-list {
   display: block;
   position: absolute;
   right: 0;
@@ -257,8 +261,12 @@ ul {
 
 @media screen and (min-width: 600px) {
 
-  .dropdown {
+  .nav-links-dropdown {
     display: none;
+  }
+
+  .nav-links {
+    display: block;
   }
 
   .nav-link-list {
@@ -266,7 +274,7 @@ ul {
     padding-top: 0;
   }
 
-  .nav-links:hover > .nav-link-list, .nav-link-list:hover {
+  .nav-links > .nav-link-list, .nav-link-list {
     position: static;
   }
 
