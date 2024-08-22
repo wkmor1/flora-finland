@@ -178,7 +178,7 @@ a:hover {
   background-color: rgba(242, 242, 242, .7);
 }
 
-.info-button::-webkit-details-marker {
+.info-button::-webkit-details-marker, .dropdown::-webkit-details-marker {
   display: none;
 }
 
