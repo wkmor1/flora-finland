@@ -76,7 +76,7 @@ nav_bar <- htmltools::withTags(
           )
         )
       ),
-      a(href = "#", tabindex = "5", class = "dropdown-dismiss", "☰")
+      div(class = "nav-links-dismiss", a(href = "#", tabindex = "5", "☰"))
     )
   )
 )

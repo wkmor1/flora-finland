@@ -44,11 +44,11 @@ body {
   right: 0;
 }
 
-.dropdown-dismiss {
+.nav-links-dismiss {
   display: none;
 }
 
-.nav-links:focus-within + .dropdown-dismiss {
+.nav-links:focus-within + .nav-links-dismiss {
   display: block;
   position: absolute;
   font-size: 2rem;
@@ -114,6 +114,7 @@ a {
   }
 
 }
+
 .nav-parent {
   margin-bottom: 30px;
   display: inline-block;
@@ -320,7 +321,7 @@ dd {
     position: static;
   }
 
-  .nav-links:focus-within + .dropdown-dismiss {
+  .nav-links:focus-within + .nav-links-dismiss {
     display: none;
   }
 
