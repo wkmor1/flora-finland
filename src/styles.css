@@ -36,14 +36,13 @@ body {
 
 .nav-link-list {
   margin: 0;
-  padding-top: 50px;
+  padding-top: 5px;
   display: none;
 }
 
 .dropdown:focus + .nav-link-list {
   display: block;
   position: absolute;
-  top: 0;
   right: 0;
 }
 
