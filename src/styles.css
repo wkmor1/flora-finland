@@ -32,6 +32,9 @@ body {
   font-size: 2rem;
   border-width: 0;
   background-color: hsl(0, 0%, 95%);
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
 
 .nav-link-list {

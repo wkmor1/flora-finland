@@ -66,6 +66,7 @@ nav_bar <- htmltools::withTags(
         button(class = "dropdown", tabindex = "0", "☰"),
         ul(
           class = "nav-link-list",
+          tabindex = "0",
           li(
             class = "nav-link",
             a(href ="/glossary", "Glossary")
