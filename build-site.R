@@ -55,26 +55,27 @@ css <- htmltools::withTags(
   link(rel = "stylesheet", type = "text/css", href = "/styles.css")
 )
 
-nav_links <- htmltools::withTags(
-  ul(
-    class = "nav-link-list",
-    li(class = "nav-link", a(href ="/glossary", "Glossary")),
-    li(class = "nav-link", a(href ="/taxa-index", "Index"))
-  )
-)
-
 nav_bar <- htmltools::withTags(
   header(
     class = "main-header",
     nav(
       class = "navbar",
       a(href = "/", class = "nav-home", "Flora of Finland"),
-      details(
-        class = "nav-links-dropdown",
-        summary(class = "dropdown", "☰"),
-        nav_links
-      ),
-      div(class = "nav-links", nav_links)
+      div(
+        class = "nav-links",
+        button(class = "dropdown", "☰"),
+        ul(
+          class = "nav-link-list",
+          li(
+            class = "nav-link",
+            a(href ="/glossary", "Glossary")
+          ),
+          li(
+            class = "nav-link",
+            a(href ="/taxa-index", "Index")
+          )
+        )
+      )
     )
   )
 )
