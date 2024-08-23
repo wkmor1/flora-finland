@@ -66,13 +66,14 @@ nav_bar <- htmltools::withTags(
         a(href = "#", tabindex = "2", class = "dropdown", "☰"),
         ul(
           class = "nav-link-list",
+          tabindex = "3",
           li(
             class = "nav-link",
-            a(href ="/glossary", tabindex = "3", "Glossary")
+            a(href ="/glossary", tabindex = "4", "Glossary")
           ),
           li(
             class = "nav-link",
-            a(href ="/taxa-index",  tabindex = "4", "Index")
+            a(href ="/taxa-index",  tabindex = "5", "Index")
           )
         )
       )
