@@ -60,19 +60,19 @@ nav_bar <- htmltools::withTags(
     class = "main-header",
     nav(
       class = "navbar",
-      a(href = "/", class = "nav-home", "Flora of Finland"),
+      a(href = "/", class = "nav-home", tabindex = "1", "Flora of Finland"),
       div(
         class = "nav-links",
-        a(href = "#", class = "dropdown", "☰"),
+        a(href = "#", tabindex = "2", class = "dropdown", "☰"),
         ul(
           class = "nav-link-list",
           li(
             class = "nav-link",
-            a(href ="/glossary", "Glossary")
+            a(href ="/glossary", tabindex = "3", "Glossary")
           ),
           li(
             class = "nav-link",
-            a(href ="/taxa-index", "Index")
+            a(href ="/taxa-index",  tabindex = "4", "Index")
           )
         )
       )
