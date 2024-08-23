@@ -63,7 +63,7 @@ nav_bar <- htmltools::withTags(
       a(href = "/", class = "nav-home", "Flora of Finland"),
       div(
         class = "nav-links",
-        button(class = "dropdown", "☰"),
+        button(class = "dropdown", tabindex = "0", "☰"),
         ul(
           class = "nav-link-list",
           li(
