@@ -32,18 +32,15 @@ body {
   font-size: 2rem;
   border-width: 0;
   background-color: hsl(0, 0%, 95%);
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
 }
 
 .nav-link-list {
   margin: 0;
-  padding-top: 50px;
+  padding-top: 49px;
   display: none;
 }
 
-.dropdown:focus + .nav-link-list {
+.nav-links:focus-within > .nav-link-list {
   display: block;
   position: absolute;
   right: 0;
@@ -304,6 +301,10 @@ dd {
     display: block;
     padding-top: 0;
     margin-top: 0;
+  }
+
+  .nav-links:focus-within > .nav-link-list {
+    position: static;
   }
 
   .nav-link {
