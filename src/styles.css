@@ -107,10 +107,13 @@ a {
   color: sienna;
 }
 
-a:hover {
-  filter: brightness(50%);
-}
+@media (hover: hover) {
 
+  a:hover {
+    filter: brightness(50%);
+  }
+
+}
 .nav-parent {
   margin-bottom: 30px;
   display: inline-block;
