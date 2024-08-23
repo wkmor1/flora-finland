@@ -75,7 +75,8 @@ nav_bar <- htmltools::withTags(
             a(href ="/taxa-index",  tabindex = "4", "Index")
           )
         )
-      )
+      ),
+      a(href = "#", tabindex = "5", class = "dropdown-dismiss", "☰")
     )
   )
 )
