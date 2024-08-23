@@ -68,7 +68,6 @@ nav_bar <- htmltools::withTags(
     class = "main-header",
     nav(
       class = "navbar",
-      role = "navigation",
       a(href = "/", class = "nav-home", "Flora of Finland"),
       details(
         class = "nav-links-dropdown",
@@ -85,8 +84,6 @@ page_footer <- htmltools::withTags(
     class = "main-footer",
     p(
       class = "license",
-      `xmlns:cc` = "http://creativecommons.org/ns#",
-      `xmlns:dct` = "http://purl.org/dc/terms/",
       "This website is marked with",
       a(
         class = "license-link",
@@ -114,84 +111,86 @@ index <- list()
 # front page
 front_page <- htmltools::withTags(
   htmltools::tagList(
-    html(
-      head(title("Flora of Finland"), viewport, css),
-      body(
-        main(
-          class = "main",
-          nav_bar,
+    head(title("Flora of Finland"), viewport, css),
+    body(
+      main(
+        class = "main",
+        nav_bar,
+        div(
+          class = "row1",
+          # image
           div(
-            class = "row1",
-            # image
-            div(
-              class = "col2",
-              figure(
-                class = "figure",
-                img(
-                  class = "main-img",
-                  src = "/img0.jpeg",
-                  alt = "Pitkäjärvi, Enontekiö"
-                ),
-                figcaption(
-                  class = "info",
-                  details(
-                    class = "info-content",
-                    summary(
-                      class = "info-button",
-                      htmltools::HTML("&#9432;")
-                    ),
-                    p(
-                      class = "info-text",
-                      "Pitkäjärvi, Enontekiö"
-                    )
-                  )
-                )
-              )
-            ),
-            div(
-              class = "col1",
-              # taxon name
-              div(
-                span("phylum", class = "rank"),
-                h1(
-                  class = "page-title",
-                  "Tracheophyta"
-                ),
-                h2("Vascular plants", class = "subtitle")
+            class = "col2",
+            figure(
+              class = "figure",
+              img(
+                class = "main-img",
+                src = "/img0.jpeg",
+                alt = "Pitkäjärvi, Enontekiö"
               ),
-              # child taxa
-              div(
-                h3(
-                  class = "taxa-list-title",
-                  "Classes"
-                ),
-                ul(
-                  lapply(
-                    mapply(
-                      a,
-                      lapply(
-                        stringr::str_to_sentence(
-                          basename(list.dirs("src", recursive = FALSE))
-                        ),
-                        span,
-                        class = "class"
-                      ),
-                      href = paste0(
-                        basename(list.dirs("src", recursive = FALSE)), "/"
-                      ),
-                      SIMPLIFY = FALSE,
-                      USE.NAMES = FALSE
-                    ),
-                    li
+              figcaption(
+                class = "info",
+                details(
+                  class = "info-content",
+                  summary(
+                    class = "info-button",
+                    htmltools::HTML("&#9432;")
+                  ),
+                  p(
+                    class = "info-text",
+                    "Pitkäjärvi, Enontekiö"
                   )
                 )
               )
             )
           ),
           div(
-            class = "row2",
-            article(
-              class = "col2",
+            class = "col1",
+            # taxon name
+            div(
+              span("phylum", class = "rank"),
+              h1(
+                class = "page-title",
+                "Tracheophyta"
+              ),
+              h2("Vascular plants", class = "subtitle")
+            ),
+            # child taxa
+            div(
+              h3(
+                class = "taxa-list-title",
+                "Classes"
+              ),
+              ul(
+                lapply(
+                  mapply(
+                    a,
+                    lapply(
+                      stringr::str_to_sentence(
+                        basename(list.dirs("src", recursive = FALSE))
+                      ),
+                      span,
+                      class = "class"
+                    ),
+                    href = paste0(
+                      basename(list.dirs("src", recursive = FALSE)), "/"
+                    ),
+                    SIMPLIFY = FALSE,
+                    USE.NAMES = FALSE
+                  ),
+                  li
+                )
+              )
+            )
+          )
+        ),
+        div(
+          class = "row2",
+          article(
+            class = "col2",
+            div(
+              class = "description-container",
+              h3(class = "description-title", "Description"),
               p(
                 class = "description",
                 link2glossary(
@@ -201,53 +200,53 @@ front_page <- htmltools::withTags(
                   )
                 )
               )
-            ),
-            div(
-              class = "col1",
-              figure(
-                class = "figure",
-                img(class = "map", src = "map.svg"),
-                figcaption(
-                  class = "info",
-                  details(
-                    class = "info-content",
-                    summary(
-                      class = "info-button",
-                      htmltools::HTML("&#9432;")
-                    ),
-                    p(
-                      class = "info-text",
-                      a(
-                        "Source",
-                        href = sprintf(map_source, "MX.53078")
-                      )
+            )
+          ),
+          div(
+            class = "col1",
+            figure(
+              class = "figure",
+              img(class = "map", src = "map.svg"),
+              figcaption(
+                class = "info",
+                details(
+                  class = "info-content",
+                  summary(
+                    class = "info-button",
+                    htmltools::HTML("&#9432;")
+                  ),
+                  p(
+                    class = "info-text",
+                    a(
+                      "Source",
+                      href = sprintf(map_source, "MX.53078")
                     )
                   )
                 )
               )
             )
-          ),
-          div(
-            class = "row3",
-            ol(
-              class = "refs",
-              h3(class = "refs-title", "References:"),
-              li(
-                "Cavalier-Smith, T. (1998).",
-                "A revised six-kingdom system of life.",
-                htmltools::HTML(
-                  "<span class=\"journal\">Biological Reviews</span>,"
-                ),
-                "73(3), 203-266.",
-                a(
-                  href ="https://doi.org/10.1111/j.1469-185X.1998.tb00030.x",
-                  "doi:10.1111/j.1469-185X.1998.tb00030.x"
-                )
+          )
+        ),
+        div(
+          class = "row3",
+          h3(class = "refs-title", "References:"),
+          ol(
+            class = "refs",
+            li(
+              "Cavalier-Smith, T. (1998).",
+              "A revised six-kingdom system of life.",
+              htmltools::HTML(
+                "<span class=\"journal\">Biological Reviews</span>,"
+              ),
+              "73(3), 203-266.",
+              a(
+                href ="https://doi.org/10.1111/j.1469-185X.1998.tb00030.x",
+                "doi:10.1111/j.1469-185X.1998.tb00030.x"
               )
             )
-          ),
-          page_footer
-        )
+          )
+        ),
+        page_footer
       )
     )
   )
@@ -313,181 +312,179 @@ for (page in list.files("src", recursive = TRUE, pattern = "content.yml")) {
 
   taxon_page <- htmltools::withTags(
     htmltools::tagList(
-      html(
-        head(title(name), viewport, css),
-        body(
-          main(
-            class = "main",
-            nav_bar,
+      head(title(name), viewport, css),
+      body(
+        main(
+          class = "main",
+          nav_bar,
+          div(
+            class = "row1",
+            # image
             div(
-              class = "row1",
-              # image
-              div(
-                class = "col2",
-                if (!is.null(content[["images"]])) figure(
-                  class = "figure",
-                  img(
-                    class = "main-img",
-                    src = content[["images"]][[1L]][["file"]],
-                    alt = content[["images"]][[1L]][["alt"]]
-                  ),
-                  figcaption(
-                    class = "info",
-                    details(
-                      class = "info-content",
-                      summary(
-                        class = "info-button",
-                        htmltools::HTML("&#9432;")
-                      ),
-                      p(
-                        class = "info-text",
-                        htmltools::HTML(content[["images"]][[1L]][["caption"]]),
-                        " | ",
-                        a(
-                          "Source",
-                          href = content[["images"]][[1L]][["src"]]
-                        )
+              class = "col2",
+              if (!is.null(content[["images"]])) figure(
+                class = "figure",
+                img(
+                  class = "main-img",
+                  src = content[["images"]][[1L]][["file"]],
+                  alt = content[["images"]][[1L]][["alt"]]
+                ),
+                figcaption(
+                  class = "info",
+                  details(
+                    class = "info-content",
+                    summary(
+                      class = "info-button",
+                      htmltools::HTML("&#9432;")
+                    ),
+                    p(
+                      class = "info-text",
+                      htmltools::HTML(content[["images"]][[1L]][["caption"]]),
+                      " | ",
+                      a(
+                        "Source",
+                        href = content[["images"]][[1L]][["src"]]
                       )
-                    )
-                  )
-                )
-              ),
-              div(
-                class = "col1",
-                # parent taxon
-                if (basename(dirname(taxon)) != ".") {
-                  div(
-                    a(
-                      class = "nav-parent",
-                      "\u2190",
-                      span(
-                        class = "parent-taxa-rank",
-                        sprintf("%s:", ranks[[c(rank, "parent")]])
-                      ),
-                      span(
-                        stringr::str_to_sentence(basename(dirname(taxon))),
-                        class = ranks[[c(rank, "parent")]]
-                      ),
-                      href = file.path("", dirname(taxon))
-                    )
-                  )
-                } else {
-                  div(
-                    a(
-                      class = "nav-parent",
-                      "\u2190",
-                      span(
-                        class = "parent-taxa-rank",
-                        "phylum:"
-                      ),
-                      span("Tracheophyta", class ="phylum"),
-                      href = "/"
-                    )
-                  )
-                },
-                # taxon name
-                div(
-                  if (rank != "species") span(rank, class = "rank"),
-                  h1(
-                    class = "page-title",
-                    span(name, class = rank)
-                  ),
-                  if (!is.null(content[["vernacularName"]])) {
-                    h2(content[["vernacularName"]], class = "subtitle")
-                  }
-                ),
-                # prev or next
-                div(
-                  if (length(prev_taxon)) {
-
-                    a(
-                      class = "prev",
-                      "\u25C2 Prev",
-                      href = file.path("", prev_taxon)
-                    )
-
-                  },
-                  if (!is.na(next_taxon)) {
-
-                    a(
-                      class = "next",
-                      "Next \u25B8",
-                      href = file.path("", next_taxon)
-                    )
-
-                  }
-                ),
-                # child taxa
-                if (length(taxa)) div(
-                  h3(
-                    class = "taxa-list-title",
-                    ranks[[c(ranks[[c(rank, "child")]], "plural")]]
-                  ),
-                  ul(
-                    lapply(
-                      mapply(
-                        a,
-                        lapply(
-                          gsub("_", " ", stringr::str_to_sentence(taxa)),
-                          span,
-                          class = ranks[[c(rank, "child")]]
-                        ),
-                        href = paste0(taxa, "/"),
-                        SIMPLIFY = FALSE,
-                        USE.NAMES = FALSE
-                      ),
-                      li
                     )
                   )
                 )
               )
             ),
-            # description
             div(
-              class = "row2",
-              article(
-                class = "col2",
+              class = "col1",
+              # parent taxon
+              if (basename(dirname(taxon)) != ".") {
+                div(
+                  a(
+                    class = "nav-parent",
+                    "\u2190",
+                    span(
+                      class = "parent-taxa-rank",
+                      sprintf("%s:", ranks[[c(rank, "parent")]])
+                    ),
+                    span(
+                      stringr::str_to_sentence(basename(dirname(taxon))),
+                      class = ranks[[c(rank, "parent")]]
+                    ),
+                    href = file.path("", dirname(taxon))
+                  )
+                )
+              } else {
+                div(
+                  a(
+                    class = "nav-parent",
+                    "\u2190",
+                    span(
+                      class = "parent-taxa-rank",
+                      "phylum:"
+                    ),
+                    span("Tracheophyta", class ="phylum"),
+                    href = "/"
+                  )
+                )
+              },
+              # taxon name
+              div(
+                if (rank != "species") span(rank, class = "rank"),
+                h1(
+                  class = "page-title",
+                  span(name, class = rank)
+                ),
+                if (!is.null(content[["vernacularName"]])) {
+                  h2(content[["vernacularName"]], class = "subtitle")
+                }
+              ),
+              # prev or next
+              div(
+                if (length(prev_taxon)) {
+
+                  a(
+                    class = "prev",
+                    "\u25C2 Prev",
+                    href = file.path("", prev_taxon)
+                  )
+
+                },
+                if (!is.na(next_taxon)) {
+
+                  a(
+                    class = "next",
+                    "Next \u25B8",
+                    href = file.path("", next_taxon)
+                  )
+
+                }
+              ),
+              # child taxa
+              if (length(taxa)) div(
+                h3(
+                  class = "taxa-list-title",
+                  ranks[[c(ranks[[c(rank, "child")]], "plural")]]
+                ),
+                ul(
+                  lapply(
+                    mapply(
+                      a,
+                      lapply(
+                        gsub("_", " ", stringr::str_to_sentence(taxa)),
+                        span,
+                        class = ranks[[c(rank, "child")]]
+                      ),
+                      href = paste0(taxa, "/"),
+                      SIMPLIFY = FALSE,
+                      USE.NAMES = FALSE
+                    ),
+                    li
+                  )
+                )
+              )
+            )
+          ),
+          # description
+          div(
+            class = "row2",
+            article(
+              class = "col2",
+              div(
+                class = "description-container",
+                h3(class = "description-title", "Description"),
                 if (!is.null(content[["description"]])) {
                   p(class = "description", content[["description"]])
                 }
-              ),
-              div(
-                class = "col1",
-                figure(
-                  class = "figure",
-                  img(class = "map", src = "map.svg"),
-                  figcaption(
-                    class = "info",
-                    details(
-                      class = "info-content",
-                      summary(
-                        class = "info-button",
-                        htmltools::HTML("&#9432;")
-                      ),
-                      p(
-                        class = "info-text",
-                        a(
-                          "Source",
-                          href = sprintf(
-                            map_source, content[["finbifID"]]
-                          )
+              )
+            ),
+            div(
+              class = "col1",
+              figure(
+                class = "figure",
+                img(class = "map", src = "map.svg"),
+                figcaption(
+                  class = "info",
+                  details(
+                    class = "info-content",
+                    summary(
+                      class = "info-button",
+                      htmltools::HTML("&#9432;")
+                    ),
+                    p(
+                      class = "info-text",
+                      a(
+                        "Source",
+                        href = sprintf(
+                          map_source, content[["finbifID"]]
                         )
                       )
                     )
                   )
                 )
               )
-            ),
-            div(
-              class = "row3",
-              ol(
-                class = "refs",
-                h3(class = "refs-title", "References:"),
-                refs
-              )
-            ),
-            page_footer
-          )
+            )
+          ),
+          div(
+            class = "row3",
+            h3(class = "refs-title", "References:"), ol(class = "refs", refs)
+          ),
+          page_footer
         )
       )
     )
