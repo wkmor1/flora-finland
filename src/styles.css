@@ -360,7 +360,6 @@ dd {
     align-self: flex-start;
   }
 
-
   .col2 {
     order: 1;
   }
@@ -390,7 +389,7 @@ dd {
   }
 
   .main-img {
-    min-width: 330px;
+    min-width: 300px;
   }
 
   .map {
