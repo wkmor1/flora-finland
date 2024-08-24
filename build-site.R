@@ -585,6 +585,8 @@ htmltools::save_html(index_page, file.path("build", "taxa-index/index.html"))
 # glossary
 glossary <- yaml::yaml.load_file("src/glossary.yml")
 
+glossary <- glossary[order(vapply(glossary, getElement, "", "term"))]
+
 glossary_page <- htmltools::withTags(
   htmltools::tagList(
     head(title("Glossary"), viewport, css),
