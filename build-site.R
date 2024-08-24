@@ -99,12 +99,12 @@ page_footer <- htmltools::withTags(
         img(
           class = "license-image",
           src = "https://mirrors.creativecommons.org/presskit/icons/cc.svg",
-          alt = ""
+          alt = "Creative commons icon"
         ),
         img(
           class = "license-image",
           src = "https://mirrors.creativecommons.org/presskit/icons/zero.svg",
-          alt = ""
+          alt = "Creative commons zero icon"
         )
       )
     )
@@ -211,7 +211,11 @@ front_page <- htmltools::withTags(
             class = "col1",
             figure(
               class = "figure",
-              img(class = "map", src = "map.svg"),
+              img(
+                class = "map",
+                src = "map.svg",
+                alt = "Occurrence of vascular plants (Tracheophyta) in Finland"
+              ),
               figcaption(
                 class = "info",
                 details(
@@ -462,7 +466,15 @@ for (page in list.files("src", recursive = TRUE, pattern = "content.yml")) {
               class = "col1",
               figure(
                 class = "figure",
-                img(class = "map", src = "map.svg"),
+                img(
+                  class = "map",
+                  src = "map.svg",
+                  alt = sprintf(
+                    "Occurrence map %s (%s) in Finland",
+                    content[["vernacularName"]],
+                    content[["scientificName"]]
+                  )
+                ),
                 figcaption(
                   class = "info",
                   details(
