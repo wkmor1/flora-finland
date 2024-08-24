@@ -32,14 +32,14 @@
     },
     "digest": {
       "Package": "digest",
-      "Version": "0.6.36",
+      "Version": "0.6.37",
       "Source": "Repository",
       "Repository": "CRAN",
       "Requirements": [
         "R",
         "utils"
       ],
-      "Hash": "fd6824ad91ede64151e93af67df6376b"
+      "Hash": "33698c4b3127fc9f506654607fb73676"
     },
     "fastmap": {
       "Package": "fastmap",
@@ -61,9 +61,14 @@
     },
     "htmltools": {
       "Package": "htmltools",
-      "Version": "0.5.8.1",
-      "Source": "Repository",
-      "Repository": "CRAN",
+      "Version": "0.5.8.9000",
+      "Source": "GitHub",
+      "RemoteType": "github",
+      "RemoteHost": "api.github.com",
+      "RemoteUsername": "wkmor1",
+      "RemoteRepo": "htmltools",
+      "RemoteRef": "main",
+      "RemoteSha": "c43237c7bbb86b6478c9f2c912cdf8deb3d6d0a7",
       "Requirements": [
         "R",
         "base64enc",
@@ -73,7 +78,7 @@
         "rlang",
         "utils"
       ],
-      "Hash": "81d371a9cc60640e74e4ab6ac46dcedc"
+      "Hash": "d17b9e4ed94787fd08d44822f673fd18"
     },
     "lifecycle": {
       "Package": "lifecycle",
