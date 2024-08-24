@@ -596,6 +596,7 @@ glossary_page <- htmltools::withTags(
         nav_bar,
         div(
           class = "glossary-container",
+          h1(class = "page-title", "Glossary"),
           dl(
             class = "glossary",
             lapply(
