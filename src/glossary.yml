@@ -1,11 +1,21 @@
 - term: Vascular tissue
   definition: A cellular assembly for transporting water and nutrients, the major
-    components of which are xylem and phloem.
+    components of which are _xylem_ and _phloem_.
 - term: Sporophyte
-  definition: The asexual spore-producing diploid stage in the life cycle of
-    plants and most algae.
+  definition: The asexual _spore_-producing _diploid_ stage in the life cycle of
+    plants and most algae. The alternate life cycle stage is the _gametophyte_
 - term: Megaphyllous
-  definition: Having megaphylls or reduced structures derived from megaphylls.
+  definition: Having _megaphyll_s or reduced structures derived from megaphylls.
 - term: Megaphyll
-  definition: A type of plant leaf that has multiple veins, the other type
-    being a microphyll which only has a single vein.
+  definition: A type of plant leaf that has multiple _vein_s, the other type
+    being a _microphyll_ which only has a single vein.
+- term: Xylem
+  definition: ""
+- term: Phloem
+  definition: ""
+- term: Spore
+  definition: ""
+- term: Vein
+  definition: ""
+- term: Microphyll
+  definition: ""
