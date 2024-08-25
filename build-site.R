@@ -23,7 +23,7 @@ map_source <- file.path(
   "finnish?target=%s&countryId=ML.206&collectionId=HR.90,HR.169,HR.3551,HR.767"
 )
 
-link2glossary <- function(text) {
+link2glossary <- function(text, path = "/glossary") {
 
   matches <- regmatches(text, gregexpr("_(.*?)_", text))[[1L]]
 
@@ -34,7 +34,8 @@ link2glossary <- function(text) {
     text <- sub(
       matches[[i]],
       sprintf(
-        "<a href=\"/glossary#%s\">%s</a>",
+        "<a href=\"%s#%s\">%s</a>",
+        path,
         gsub(" ", "-", terms[[1L]]),
         terms[[i]]
       ),
@@ -616,7 +617,7 @@ glossary_page <- htmltools::withTags(
               \(x) {
                 list(
                   dt(id = gsub(" ", "-", tolower(x[["term"]])), x[["term"]]),
-                  dd(x[["definition"]])
+                  dd(link2glossary(x[["definition"]], ""))
                 )
               }
             )
