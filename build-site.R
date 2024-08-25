@@ -60,7 +60,7 @@ nav_bar <- htmltools::withTags(
     class = "main-header",
     nav(
       class = "navbar",
-      a(href = "/", class = "nav-home", "Flora of Finland"),
+      a(href = "/", class = "nav-home", autofocus = NA, "Flora of Finland"),
       div(
         class = "nav-links",
         a(href = "#", tabindex = "0", class = "dropdown", "☰"),
