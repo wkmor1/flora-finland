@@ -2,3 +2,8 @@ finbifID: MX.37765
 vernacularName: True fragile ferns
 scientificName: Cystopteris
 taxonRank: genus
+images:
+- file: img0.jpeg
+  src: https://www.inaturalist.org/photos/76921736
+  alt: Common fragile fern (Cystopteris fragilis) growing in Luolavuori, Turku
+  caption: <span class="species">Cystopteris fragilis</span> (Luolavuori, Turku)

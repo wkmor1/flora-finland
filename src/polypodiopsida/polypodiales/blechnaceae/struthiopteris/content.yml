@@ -2,3 +2,8 @@ finbifID: MX.5015024
 vernacularName: Deer ferns
 scientificName: Struthiopteris
 taxonRank: genus
+images:
+- file: img0.jpeg
+  src: https://www.inaturalist.org/photos/422977287
+  alt: Western deer fern (Struthiopteris spicant) growing in Mikkelä, Espoo
+  caption: <span class="species">Struthiopteris spicant</span> (Mikkelä, Espoo)

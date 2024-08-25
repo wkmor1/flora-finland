@@ -3,5 +3,7 @@ vernacularName: Northern oak fern
 images:
 - file: img0.jpeg
   src: https://www.inaturalist.org/photos/414107738
+  alt: Northern oak fern (Gymnocarpium dryopteris) growing in Enäjärvi, Pori
+  caption: <span class="species">Gymnocarpium dryopteris</span> (Enäjärvi, Pori)
 scientificName: Gymnocarpium dryopteris
 taxonRank: species

@@ -2,3 +2,8 @@ finbifID: MX.37762
 vernacularName: True ladyferns
 scientificName: Athyrium
 taxonRank: genus
+images:
+- file: img0.jpeg
+  src: https://www.inaturalist.org/photos/284468882
+  alt: Eurasian ladyfern (Athyrium filix-femina) sporangia
+  caption: <span class="species">Athyrium filix-femina</span> sporangia

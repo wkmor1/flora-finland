@@ -2,3 +2,8 @@ finbifID: MX.37766
 vernacularName: Common fragile fern
 scientificName: Cystopteris fragilis
 taxonRank: species
+images:
+- file: img0.jpeg
+  src: https://www.inaturalist.org/photos/142720932
+  alt: Common fragile fern (Cystopteris fragilis) growing in Purunpää, Kimito
+  caption: <span class="species">Cystopteris fragilis</span> (Purunpää, Kimito)

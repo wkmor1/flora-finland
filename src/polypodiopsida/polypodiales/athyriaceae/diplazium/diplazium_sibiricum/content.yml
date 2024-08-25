@@ -2,3 +2,8 @@ finbifID: MX.37761
 vernacularName: Mole-ladder
 scientificName: Diplazium sibiricum
 taxonRank: species
+images:
+- file: img0.jpeg
+  src: https://www.inaturalist.org/photos/83415003
+  alt: Mole-ladder (Diplazium sibiricum) growing in Lastukoski, Kuopio
+  caption: <span class="species">Diplazium sibiricum</span> (Lastukoski, Kuopio)

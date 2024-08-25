@@ -2,3 +2,8 @@ finbifID: MX.37770
 vernacularName: Oak ferns
 scientificName: Gymnocarpium
 taxonRank: genus
+images:
+- file: img0.jpeg
+  src: https://www.inaturalist.org/photos/75568727
+  alt: Northern oak fern (Gymnocarpium dryopteris) growing in Mäntymäki, Turku
+  caption: <span class="species">Gymnocarpium dryopteris</span> (Mäntymäki, Turku)
