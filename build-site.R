@@ -179,6 +179,7 @@ front_page <- htmltools::withTags(
             class = "col1",
             # taxon name
             div(
+              class = "page-title-container",
               span("phylum", class = "rank"),
               h1(
                 class = "page-title",
@@ -420,6 +421,7 @@ for (page in list.files("src", recursive = TRUE, pattern = "content.yml")) {
               },
               # taxon name
               div(
+                class = "page-title-container",
                 if (rank != "species") span(rank, class = "rank"),
                 h1(
                   class = "page-title",
@@ -637,7 +639,10 @@ glossary_page <- htmltools::withTags(
         nav_bar,
         div(
           class = "glossary-container",
-          h1(class = "page-title", "Glossary"),
+          div(
+            class = "glossary-title-container",
+            h1(class = "page-title", "Glossary")
+          ),
           dl(
             class = "glossary",
             lapply(

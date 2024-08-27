@@ -375,8 +375,13 @@ dd {
     align-items: center;
   }
 
+  .page-title-container, .glossary-title-container {
+    container-type: inline-size;
+    max-width: 560px;
+  }
+
   .page-title {
-    font-size: 3rem;
+    font-size: 10cqw;
   }
 
   .author {
