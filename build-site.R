@@ -29,6 +29,30 @@ link2glossary <- function(text, path = "/glossary") {
 
   terms <- gsub("_", "", matches)
 
+  links <- mapply(
+    \(x, y) regmatches(x, y)[[1L]],
+    terms,
+    lapply(terms, \(z) gregexpr("\\[(.*?)\\]", z)),
+    USE.NAMES = FALSE,
+    SIMPLIFY = FALSE
+  )
+
+  terms <- mapply(
+    \(x, y) if (length(x)) sub(x, "", y, fixed = TRUE) else y,
+    links,
+    terms,
+    USE.NAMES = TRUE,
+    SIMPLIFY = FALSE
+  )
+
+  links <- mapply(
+    \(x, y) if (length(x)) gsub("\\[|\\]", "", x) else y,
+    links,
+    terms,
+    USE.NAMES = FALSE,
+    SIMPLIFY = FALSE
+  )
+
   for (i in seq_along(matches)) {
 
     text <- sub(
@@ -36,10 +60,11 @@ link2glossary <- function(text, path = "/glossary") {
       sprintf(
         "<a href=\"%s#%s\">%s</a>",
         path,
-        gsub(" ", "-", terms[[1L]]),
+        gsub(" ", "-", links[[i]]),
         terms[[i]]
       ),
-      text
+      text,
+      fixed = TRUE
     )
 
   }
@@ -459,7 +484,10 @@ for (page in list.files("src", recursive = TRUE, pattern = "content.yml")) {
                 class = "description-container",
                 h3(class = "description-title", "Description"),
                 if (!is.null(content[["description"]])) {
-                  p(class = "description", content[["description"]])
+                  p(
+                    class = "description",
+                    link2glossary(content[["description"]])
+                  )
                 }
               )
             ),
