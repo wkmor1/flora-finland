@@ -2,9 +2,10 @@ finbifID: MX.37782
 vernacularName: Spleenworts
 scientificName: Aspleniaceae
 taxonRank: family
-description: Ferns with stipes having back-to-back C-shaped vascular bundles
-  that are fused into an X-shape towards the blade. Their sori, found alongside
-  veins, are elongate with laterally attached flap-like linear indusia.
+description: Ferns with _stipe_s having back-to-back C-shaped _vascular bundle_s
+  that are fused into an X-shape towards the _blade_. Their _sori[sorus]_, found
+  alongside _vein_s, are _elongate_ with laterally attached flap-like linear
+  _indusia[indusium]_.
 sources:
 - ref: Smith, A. R., et al. (2006). A classification for extant ferns.
     <span class="journal">Taxon</span>, 55(3), 705-731.
