@@ -171,6 +171,10 @@ a {
   position: relative;
 }
 
+.col1 .figure {
+  max-width: 250px;
+}
+
 .info {
   position: absolute;
   bottom: 0;
@@ -264,6 +268,12 @@ dd {
 .col1 {
   padding-top: 19px;
   padding-left: 19px;
+}
+
+.row2 .col1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .index-container {
