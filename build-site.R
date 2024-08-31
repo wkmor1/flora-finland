@@ -137,6 +137,102 @@ page_footer <- htmltools::withTags(
   )
 )
 
+image_constructor <- function(x) {
+
+  htmltools::withTags(
+    figure(
+      class = "figure",
+      img(class = "main-img", src = x[["file"]], alt = x[["alt"]]),
+      figcaption(
+        class = "info",
+        details(
+          class = "info-content",
+          summary(class = "info-button", htmltools::HTML("&#9432;")),
+          p(
+            class = "info-text",
+            htmltools::HTML(x[["caption"]]),
+            " | ",
+            a("Source", href = x[["src"]])
+          )
+        )
+      )
+    )
+  )
+
+}
+
+images <- function(content) {
+
+  imgs <- content[["images"]]
+
+  n_imgs <- length(imgs)
+
+  if (n_imgs > 1) {
+
+    htmltools::withTags(
+      section(
+        class = "carousel",
+        `aria-label`= "Gallery",
+        div(
+          class = "carousel-viewport",
+          lapply(
+            seq_len(n_imgs),
+            function(i) {
+
+              goto <- "Go to %s image"
+
+              prv_n <- i - 1
+              nxt_n <- i + 1
+              prv <- "previous"
+              nxt <- "next"
+
+              if (i == 1) {
+
+                prv_n <- n_imgs
+                prv <- "last"
+
+              }
+
+              if (i == n_imgs) {
+
+                nxt_n <- 1
+                nxt <- "first"
+
+              }
+
+              div(
+                id = paste0("carousel-image", i),
+                class = "carousel-image",
+                tabindex = "0",
+                image_constructor(imgs[[i]]),
+                div(
+                  class = "carousel-snapper",
+                  a(
+                    href = paste0("#carousel-image", prv_n),
+                    class = "carousel-prev",
+                    sprintf(goto, prv)
+                  ),
+                  a(
+                    href = paste0("#carousel-image", nxt_n),
+                    class = "carousel-next",
+                    sprintf(goto, nxt)
+                  )
+                )
+              )
+            }
+          )
+        )
+      )
+    )
+
+  } else {
+
+    image_constructor(imgs[[1L]])
+
+  }
+
+}
+
 index <- list()
 
 # front page
@@ -358,33 +454,7 @@ for (page in list.files("src", recursive = TRUE, pattern = "content.yml")) {
             # image
             div(
               class = "col2",
-              if (!is.null(content[["images"]])) figure(
-                class = "figure",
-                img(
-                  class = "main-img",
-                  src = content[["images"]][[1L]][["file"]],
-                  alt = content[["images"]][[1L]][["alt"]]
-                ),
-                figcaption(
-                  class = "info",
-                  details(
-                    class = "info-content",
-                    summary(
-                      class = "info-button",
-                      htmltools::HTML("&#9432;")
-                    ),
-                    p(
-                      class = "info-text",
-                      htmltools::HTML(content[["images"]][[1L]][["caption"]]),
-                      " | ",
-                      a(
-                        "Source",
-                        href = content[["images"]][[1L]][["src"]]
-                      )
-                    )
-                  )
-                )
-              )
+              if (!is.null(content[["images"]])) images(content)
             ),
             div(
               class = "col1",
@@ -544,11 +614,15 @@ for (page in list.files("src", recursive = TRUE, pattern = "content.yml")) {
 
   htmltools::save_html(taxon_page, file.path("build", taxon, "index.html"))
 
-  file.copy(
-    file.path("src", taxon, "img0.jpeg"),
-    file.path("build", taxon, "img0.jpeg"),
-    overwrite = TRUE
-  )
+  for (img in list.files(file.path("src", taxon), pattern = "\\.jpeg$")) {
+
+    file.copy(
+      file.path("src", taxon, img),
+      file.path("build", taxon, img),
+      overwrite = TRUE
+    )
+
+  }
 
   file.copy(
     file.path("src", taxon, "map.svg"),

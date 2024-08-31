@@ -2,3 +2,12 @@ finbifID: MX.37749
 vernacularName: Woodferns
 scientificName: Dryopteris
 taxonRank: genus
+images:
+- file: img0.jpeg
+  src: https://www.inaturalist.org/photos/423729111
+  alt: Common woodfern (Dryopteris filix-mas) growing in Kallahti, Helsinki
+  caption: <span class="species">Dryopteris filix-mas</span> (Kallahti, Helsinki)
+- file: img1.jpeg
+  src: https://www.inaturalist.org/photos/423728965
+  alt: Spinulose woodfern (Dryopteris carthusiana) growing in Kallahti, Helsinki
+  caption: <span class="species">Dryopteris carthusiana</span> (Kallahti, Helsinki)

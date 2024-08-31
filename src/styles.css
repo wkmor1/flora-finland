@@ -175,6 +175,155 @@ a {
   max-width: 250px;
 }
 
+@keyframes tonext {
+  75% {
+    left: 0;
+  }
+  95% {
+    left: 100%;
+  }
+  98% {
+    left: 100%;
+  }
+  99% {
+    left: 0;
+  }
+}
+
+@keyframes tostart {
+  75% {
+    left: 0;
+  }
+  95% {
+    left: -300%;
+  }
+  98% {
+    left: -300%;
+  }
+  99% {
+    left: 0;
+  }
+}
+
+@keyframes snap {
+  96% {
+    scroll-snap-align: center;
+  }
+  97% {
+    scroll-snap-align: none;
+  }
+  99% {
+    scroll-snap-align: none;
+  }
+  100% {
+    scroll-snap-align: center;
+  }
+}
+
+.carousel {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4/3;
+}
+
+.carousel-viewport {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  scrollbar-color: transparent transparent;
+  overflow-y: hidden;
+
+}
+
+.carousel-image {
+  position: relative;
+  flex: 0 0 100%;
+  scroll-margin-top: 48px;
+}
+
+.carousel-snapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  scroll-snap-align: center;
+  width: 100%;
+  aspect-ratio: 4/3;
+}
+
+@media (hover: hover) {
+
+  .carousel-snapper {
+    animation-name: tonext, snap;
+    animation-timing-function: ease;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+  }
+
+  .carousel-image:last-child .carousel-snapper {
+    animation-name: tostart, snap;
+  }
+
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  .carousel-snapper {
+    animation-name: none;
+  }
+
+}
+
+.carousel:hover .carousel-snapper, .carousel:focus-within .carousel-snapper {
+  animation-name: none;
+}
+
+.carousel::before, .carousel::after, .carousel-prev, .carousel-next {
+  position: absolute;
+  top: 0;
+  margin-top: 37.5%;
+  width: 96px;
+  height: 96px;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  font-size: 0;
+  outline: 0;
+}
+
+.carousel::before, .carousel-prev {
+  left: 0;
+}
+
+.carousel::after, .carousel-next {
+  right: 0;
+}
+
+.carousel::before, .carousel::after {
+  content: '';
+  z-index: 1;
+  background-size: 1rem 1.5rem;
+  background-repeat: no-repeat;
+  background-position: center center;
+  font-size: 2.5rem;
+  line-height: 4rem;
+  text-align: center;
+  pointer-events: none;
+}
+
+.carousel::before {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon points='0,50 80,100 80,0' fill='%23fff'/%3E%3C/svg%3E");
+}
+
+.carousel::after {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon points='100,50 20,100 20,0' fill='%23fff'/%3E%3C/svg%3E");
+}
+
 .info {
   position: absolute;
   bottom: 0;
