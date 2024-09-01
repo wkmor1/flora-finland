@@ -218,7 +218,6 @@ a {
   width: 36px;
   height: 100%;
   font-size: 0;
-  outline: 0;
 }
 
 .carousel::before, .carousel-prev {

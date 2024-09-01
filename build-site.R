@@ -142,6 +142,7 @@ image_constructor <- function(x) {
   htmltools::withTags(
     figure(
       class = "figure",
+      role = "group",
       img(class = "main-img", src = x[["file"]], alt = x[["alt"]]),
       figcaption(
         class = "info",
@@ -175,6 +176,7 @@ images <- function(content) {
         `aria-label`= "Gallery",
         div(
           class = "carousel-viewport",
+          tabindex = "-1",
           lapply(
             seq_len(n_imgs),
             function(i) {
@@ -249,6 +251,7 @@ front_page <- htmltools::withTags(
             class = "col2",
             figure(
               class = "figure",
+              role = "group",
               img(
                 class = "main-img",
                 src = "/img0.jpeg",
@@ -333,6 +336,7 @@ front_page <- htmltools::withTags(
             class = "col1",
             figure(
               class = "figure",
+              role = "group",
               img(
                 class = "map",
                 src = "map.svg",
@@ -566,6 +570,7 @@ for (page in list.files("src", recursive = TRUE, pattern = "content.yml")) {
               class = "col1",
               figure(
                 class = "figure",
+                role = "group",
                 img(
                   class = "map",
                   src = "map.svg",
