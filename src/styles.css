@@ -194,13 +194,12 @@ a {
   scroll-snap-type: x mandatory;
   scrollbar-width: none;
   scrollbar-color: transparent transparent;
-  overflow-y: clip;
+  overflow-y: initial;
 }
 
 .carousel-image {
   position: relative;
   flex: 0 0 100%;
-  scroll-padding-top: 100px;
   scroll-margin-top: 100px;
   scroll-snap-align: start;
 }
