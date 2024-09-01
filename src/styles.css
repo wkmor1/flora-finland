@@ -194,7 +194,7 @@ a {
   scroll-snap-type: x mandatory;
   scrollbar-width: none;
   scrollbar-color: transparent transparent;
-  overflow-y: hidden;
+  overflow-y: clip;
 }
 
 .carousel-image {
