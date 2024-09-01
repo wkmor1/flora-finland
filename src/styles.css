@@ -200,7 +200,7 @@ a {
 .carousel-image {
   position: relative;
   flex: 0 0 100%;
-  scroll-margin-top: 48px;
+  scroll-margin-top: 100px;
 }
 
 .carousel-snapper {
