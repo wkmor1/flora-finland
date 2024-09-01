@@ -203,7 +203,6 @@ images <- function(content) {
               div(
                 id = paste0("carousel-image", i),
                 class = "carousel-image",
-                tabindex = "0",
                 image_constructor(imgs[[i]]),
                 div(
                   class = "carousel-snapper",
