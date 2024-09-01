@@ -175,51 +175,6 @@ a {
   max-width: 250px;
 }
 
-@keyframes tonext {
-  75% {
-    left: 0;
-  }
-  95% {
-    left: 100%;
-  }
-  98% {
-    left: 100%;
-  }
-  99% {
-    left: 0;
-  }
-}
-
-@keyframes tostart {
-  75% {
-    left: 0;
-  }
-  95% {
-    left: -300%;
-  }
-  98% {
-    left: -300%;
-  }
-  99% {
-    left: 0;
-  }
-}
-
-@keyframes snap {
-  96% {
-    scroll-snap-align: center;
-  }
-  97% {
-    scroll-snap-align: none;
-  }
-  99% {
-    scroll-snap-align: none;
-  }
-  100% {
-    scroll-snap-align: center;
-  }
-}
-
 .carousel {
   position: relative;
   width: 100%;
@@ -255,33 +210,6 @@ a {
   scroll-snap-align: center;
   width: 100%;
   aspect-ratio: 4/3;
-}
-
-@media (hover: hover) {
-
-  .carousel-snapper {
-    animation-name: tonext, snap;
-    animation-timing-function: ease;
-    animation-duration: 4s;
-    animation-iteration-count: infinite;
-  }
-
-  .carousel-image:last-child .carousel-snapper {
-    animation-name: tostart, snap;
-  }
-
-}
-
-@media (prefers-reduced-motion: reduce) {
-
-  .carousel-snapper {
-    animation-name: none;
-  }
-
-}
-
-.carousel:hover .carousel-snapper, .carousel:focus-within .carousel-snapper {
-  animation-name: none;
 }
 
 .carousel::before, .carousel::after, .carousel-prev, .carousel-next {
