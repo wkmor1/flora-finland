@@ -8,6 +8,10 @@ file.copy("src/img0.jpeg", "build/img0.jpeg", overwrite = TRUE)
 
 file.copy("src/map.svg", "build/map.svg", overwrite = TRUE)
 
+file.copy(
+  list.files("src/favicon", full.names = TRUE), "build", overwrite = TRUE
+)
+
 ranks <- list(
   class   = c(plural = "classes:",  child = "order",      parent = "phylum"),
   order   = c(plural = "orders:",   child = "family",     parent = "class"),
@@ -79,6 +83,32 @@ viewport <- htmltools::withTags(
 
 css <- htmltools::withTags(
   link(rel = "stylesheet", type = "text/css", href = "/styles.css")
+)
+
+favicon <- htmltools::withTags(
+  list(
+    link(
+      rel = "apple-touch-icon",
+      sizes = "180x180",
+      href = "/apple-touch-icon.png"
+    ),
+    link(
+      rel = "icon",
+      type = "image/png",
+      sizes = "32x32",
+      href = "/favicon-32x32.png"
+    ),
+    link(
+      rel = "icon",
+      type = "image/png",
+      sizes = "16x16",
+      href = "/favicon-16x16.png"
+    ),
+    link(
+      rel = "manifest",
+      href = "/site.webmanifest"
+    )
+  )
 )
 
 nav_bar <- htmltools::withTags(
@@ -239,7 +269,7 @@ index <- list()
 # front page
 front_page <- htmltools::withTags(
   htmltools::tagList(
-    head(title("Flora of Finland"), viewport, css),
+    head(title("Flora of Finland"), viewport, css, favicon),
     body(
       main(
         class = "main",
@@ -447,7 +477,7 @@ for (page in list.files("src", recursive = TRUE, pattern = "content.yml")) {
 
   taxon_page <- htmltools::withTags(
     htmltools::tagList(
-      head(title(name), viewport, css),
+      head(title(name), viewport, css, favicon),
       body(
         main(
           class = "main",
@@ -647,7 +677,7 @@ index <- split(index, index[["letter"]])
 
 index_page <- htmltools::withTags(
   htmltools::tagList(
-    head(title("Index"), viewport, css),
+    head(title("Index"), viewport, css, favicon),
     body(
       main(
         class = "main",
@@ -710,7 +740,7 @@ glossary <- glossary[order(vapply(glossary, getElement, "", "term"))]
 
 glossary_page <- htmltools::withTags(
   htmltools::tagList(
-    head(title("Glossary"), viewport, css),
+    head(title("Glossary"), viewport, css, favicon),
     body(
       main(
         class = "main",
