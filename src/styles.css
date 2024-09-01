@@ -200,14 +200,15 @@ a {
 .carousel-image {
   position: relative;
   flex: 0 0 100%;
+  scroll-padding-top: 100px;
   scroll-margin-top: 100px;
+  scroll-snap-align: start;
 }
 
 .carousel-snapper {
   position: absolute;
   top: 0;
   left: 0;
-  scroll-snap-align: center;
   width: 100%;
   aspect-ratio: 4/3;
 }
