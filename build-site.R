@@ -327,13 +327,19 @@ front_page <- htmltools::withTags(
                     a,
                     lapply(
                       stringr::str_to_sentence(
-                        setdiff(basename(list.dirs("src", recursive = FALSE)), "favicon")
+                        setdiff(
+                          basename(list.dirs("src", recursive = FALSE)),
+                          "favicon"
+                        )
                       ),
                       span,
                       class = "class"
                     ),
                     href = paste0(
-                      setdiff(basename(list.dirs("src", recursive = FALSE)), "favicon"), "/"
+                      setdiff(
+                        basename(list.dirs("src", recursive = FALSE)), "favicon"
+                      ),
+                      "/"
                     ),
                     SIMPLIFY = FALSE,
                     USE.NAMES = FALSE
