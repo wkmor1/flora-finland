@@ -77,8 +77,24 @@ link2glossary <- function(text, path = "/glossary") {
 
 }
 
-viewport <- htmltools::withTags(
-  meta(name = "viewport", content = "width=device-width, initial-scale=1.0")
+description <- "An online flora of Finland"
+
+author <- "William K. Morris"
+
+meta_data <- htmltools::withTags(
+  htmltools::tagList(
+    meta(name = "viewport", content = "width=device-width, initial-scale=1.0"),
+    meta(name = "author", content = author),
+    meta(name = "description", content = description),
+    meta(name = "keywords", content = "flora,Finland,botany"),
+    link(rel = "schema.DC", href = "http://purl.org/DC/elements/1.0/"),
+    meta(name = "DC.Title", content = "Flora of Finland"),
+    meta(name = "DC.Description", content = description),
+    meta(name = "DC.Creator", content = author),
+    meta(name = "DC.Date", content = Sys.Date()),
+    meta(name = "DC.Language", content = "en"),
+    meta(name = "DC.Subject", content = "flora")
+  )
 )
 
 css <- htmltools::withTags(
@@ -86,7 +102,7 @@ css <- htmltools::withTags(
 )
 
 favicon <- htmltools::withTags(
-  list(
+  htmltools::tagList(
     link(
       rel = "apple-touch-icon",
       sizes = "180x180",
@@ -269,7 +285,7 @@ index <- list()
 # front page
 front_page <- htmltools::withTags(
   htmltools::tagList(
-    head(title("Flora of Finland"), viewport, css, favicon),
+    head(title("Flora of Finland"), meta_data, css, favicon),
     body(
       main(
         class = "main",
@@ -483,7 +499,7 @@ for (page in list.files("src", recursive = TRUE, pattern = "content.yml")) {
 
   taxon_page <- htmltools::withTags(
     htmltools::tagList(
-      head(title(name), viewport, css, favicon),
+      head(title(name), meta_data, css, favicon),
       body(
         main(
           class = "main",
@@ -683,7 +699,7 @@ index <- split(index, index[["letter"]])
 
 index_page <- htmltools::withTags(
   htmltools::tagList(
-    head(title("Index"), viewport, css, favicon),
+    head(title("Index"), meta_data, css, favicon),
     body(
       main(
         class = "main",
@@ -746,7 +762,7 @@ glossary <- glossary[order(vapply(glossary, getElement, "", "term"))]
 
 glossary_page <- htmltools::withTags(
   htmltools::tagList(
-    head(title("Glossary"), viewport, css, favicon),
+    head(title("Glossary"), meta_data, css, favicon),
     body(
       main(
         class = "main",
