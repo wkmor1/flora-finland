@@ -79,18 +79,14 @@ link2glossary <- function(text, path = "/glossary") {
 
 description <- "An online flora of Finland"
 
-author <- "William K. Morris"
-
 meta_data <- htmltools::withTags(
   htmltools::tagList(
     meta(name = "viewport", content = "width=device-width, initial-scale=1.0"),
-    meta(name = "author", content = author),
     meta(name = "description", content = description),
     meta(name = "keywords", content = "flora,Finland,botany"),
     link(rel = "schema.DC", href = "http://purl.org/DC/elements/1.0/"),
     meta(name = "DC.Title", content = "Flora of Finland"),
     meta(name = "DC.Description", content = description),
-    meta(name = "DC.Creator", content = author),
     meta(name = "DC.Date", content = Sys.Date()),
     meta(name = "DC.Language", content = "en"),
     meta(name = "DC.Subject", content = "flora")
