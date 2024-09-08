@@ -2,3 +2,8 @@ finbifID: MX.37739
 vernacularName: True brackens
 scientificName: Pteridium
 taxonRank: genus
+images:
+- file: img0.jpeg
+  src: https://www.inaturalist.org/photos/428091549
+  alt: Common Bracken (Pteridium aquilinum) growing in Voiluoto, Rauma
+  caption: <span class="species">Pteridium aquilinum</span> (Voiluoto, Rauma)

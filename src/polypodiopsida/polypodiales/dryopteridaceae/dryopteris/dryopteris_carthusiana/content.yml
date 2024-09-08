@@ -3,5 +3,7 @@ vernacularName: Spinulose woodfern
 images:
 - file: img0.jpeg
   src: https://www.inaturalist.org/photos/414105515
+  alt: Spinulose woodfern (Dryopteris carthusiana) growing in Enäjärvi, Pori
+  caption: <span class="species">Dryopteris carthusiana</span> (Enäjärvi, Pori)
 scientificName: Dryopteris carthusiana
 taxonRank: species

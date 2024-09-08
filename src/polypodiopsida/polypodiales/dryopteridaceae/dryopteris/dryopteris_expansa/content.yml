@@ -2,3 +2,8 @@ finbifID: MX.37754
 vernacularName: Spreading woodfern
 scientificName: Dryopteris expansa
 taxonRank: species
+images:
+- file: img0.jpeg
+  src: https://www.inaturalist.org/photos/428454542
+  alt: Spreading woodfern (Dryopteris expansa) growing in Voiluoto, Rauma
+  caption: <span class="species">Dryopteris expansa</span> (Voiluoto, Rauma)

@@ -2,3 +2,8 @@ finbifID: MX.289417
 vernacularName: Sensitive ferns
 scientificName: Onocleaceae
 taxonRank: family
+images:
+- file: img0.jpeg
+  src: https://www.inaturalist.org/photos/284468256
+  alt: Ostrich fern (Matteuccia struthiopteris) growing in Vuosaari, Helsinki
+  caption: <span class="species">Matteuccia struthiopteris</span> (Vuosaari, Helsinki)
