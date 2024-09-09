@@ -2,3 +2,8 @@ finbifID: MX.289418
 vernacularName: Cliff ferns
 scientificName: Woodsiaceae
 taxonRank: family
+images:
+- file: img0.jpeg
+  src: https://www.inaturalist.org/photos/428947720
+  alt: Rusty woodsia (Woodsia ilvensis) growing in Alppila, Helsinki
+  caption: <span class="species">Woodsia ilvensis</span> (Alppila, Helsinki)
