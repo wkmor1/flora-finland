@@ -50,7 +50,9 @@ gg <-
   ggplot2::scale_fill_continuous(
     low = "sienna", high = "sienna", na.value = "transparent"
   ) +
-  ggplot2::geom_sf(data = finland, fill = "transparent", color = "darkslategrey") +
+  ggplot2::geom_sf(
+    data = finland, fill = "transparent", color = "darkslategrey"
+  ) +
   ggplot2::theme_void()
 
 svglite::svglite(file.path("src", "map.svg"), width = 5, bg = "grey90")
@@ -59,7 +61,7 @@ print(gg)
 
 dev.off()
 
-for (page in list.dirs("src")[-1]) {
+for (page in setdiff(list.dirs("src"), c("src", "src/favicon"))) {
 
   taxon <- basename(page)
 
@@ -115,7 +117,9 @@ for (page in list.dirs("src")[-1]) {
     ggplot2::scale_fill_continuous(
       low = "sienna", high = "sienna", na.value = "transparent"
     ) +
-    ggplot2::geom_sf(data = finland, fill = "transparent", color = "darkslategrey") +
+    ggplot2::geom_sf(
+      data = finland, fill = "transparent", color = "darkslategrey"
+    ) +
     ggplot2::theme_void()
 
   svglite::svglite(file.path(page, "map.svg"), width = 5, bg = "grey90")
