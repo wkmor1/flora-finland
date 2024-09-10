@@ -2,11 +2,11 @@ finbifID: MX.70086
 vernacularName: Cathetogyrate ferns
 scientificName: Polypodiales
 taxonRank: order
-description: Ferns bearing _sporangia[sporangium]_ with vertical
-  _annuli[annulus]_ interrupted by the _stalk_ and _stomium_.
+description: Ferns bearing _sporangia[sporangium]_ with vertical _annuli[annulus]_
+  interrupted by the _stalk_ and _stomium_.
 sources:
-- ref: Smith, A. R., et al. (2006). A classification for extant ferns.
-    <span class="journal">Taxon</span>, 55(3), 705-731.
+- ref: Smith, A. R., et al. (2006). A classification for extant ferns. <span class="journal">Taxon</span>,
+    55(3), 705-731.
   doi: 10.2307/25065646
 images:
 - file: img0.jpeg

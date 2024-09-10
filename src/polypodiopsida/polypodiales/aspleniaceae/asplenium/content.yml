@@ -2,16 +2,16 @@ finbifID: MX.37783
 vernacularName: True spleenworts
 scientificName: Asplenium
 taxonRank: genus
-description: Spleenworts with root cortex sclereids having internal
-  periclinal walls that are thicker than their external walls.
+description: Spleenworts with root cortex sclereids having internal periclinal walls
+  that are thicker than their external walls.
 sources:
-- ref: Schneider, H. (1997). Root anatomy of Aspleniaceae and the implications
-   for systematics of this fern family.
-   <span class="journal">Fern Gazette</span>, 15(5), 160-168.
+- ref: Schneider, H. (1997). Root anatomy of Aspleniaceae and the implications for
+    systematics of this fern family. <span class="journal">Fern Gazette</span>, 15(5),
+    160-168.
   doi: 10.5555/19981605155
-- ref: Wetzel, M. L. R., et al. (2017). Vegetative anatomy of Aspleniaceae
-    Newman from Brazilian Atlantic rainforest and its application in taxonomy.
-    <span class="journal">Flora</span>, 233, 118-126.
+- ref: Wetzel, M. L. R., et al. (2017). Vegetative anatomy of Aspleniaceae Newman
+    from Brazilian Atlantic rainforest and its application in taxonomy. <span class="journal">Flora</span>,
+    233, 118-126.
   doi: 10.1016/j.flora.2017.05.010
 images:
 - file: img0.jpeg

@@ -2,12 +2,12 @@ finbifID: MX.4977160
 vernacularName: Ferns
 scientificName: Polypodiopsida
 taxonRank: class
-description: _Megaphyllous_ _perennial_s with free-living _gametophyte_s and
-  _sporangia[sporangium]_-bearing _sporophyte_s.
+description: _Megaphyllous_ _perennial_s with free-living _gametophyte_s and _sporangia[sporangium]_-bearing
+  _sporophyte_s.
 sources:
 - ref: PPG I. (2016). A community‐derived classification for extant lycophytes and
-    ferns. <span class="journal">Journal of Systematics and Evolution</span>,
-    54(6), 563-603.
+    ferns. <span class="journal">Journal of Systematics and Evolution</span>, 54(6),
+    563-603.
   doi: 10.1111/jse.12229
 images:
 - file: img0.jpeg
