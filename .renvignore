@@ -1,2 +1,3 @@
 update-src.R
 build-checklist.R
+scale-images.R
