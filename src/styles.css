@@ -20,7 +20,7 @@ body {
 }
 
 .navbar {
-  padding: 5px 15px;
+  padding: 5px 19px;
   align-items: center;
   display: flex;
   justify-content: space-between;
@@ -56,7 +56,7 @@ body {
   font-size: 2rem;
   right: 0;
   top: 0;
-  padding: 5px 15px;
+  padding: 5px 19px;
 }
 
 .nav-link {
@@ -148,7 +148,7 @@ a {
 
 .row2 {
   padding-right: 19px;
-  padding-bottom: 15px;
+  padding-bottom: 19px;
 }
 
 .row3 {
@@ -334,7 +334,7 @@ dd {
 .description {
   font-size: 1.3rem;
   margin: 0px;
-  padding: 19px;
+  padding: 19px 0 19px 19px;
   display: inline-block;
 }
 
@@ -383,7 +383,7 @@ dd {
 }
 
 .license {
-  margin: 19px;
+  margin: 19px 0 19px 19px;
   font-size: .9rem;
 }
 
