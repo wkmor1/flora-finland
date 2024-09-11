@@ -78,7 +78,7 @@ body {
 
 .page-title {
   font-weight: 350;
-  font-size: 2.5rem;
+  font-size: 10cqw;
   margin: 0;
 }
 
@@ -170,6 +170,10 @@ a {
 .figure {
   margin: 0;
   position: relative;
+}
+
+.row1 .col2 {
+  aspect-ratio: 4/3;
 }
 
 .col1 .figure {
@@ -321,7 +325,7 @@ dd {
 
 .description-title {
   margin: 0px;
-  padding: 15px 0 0 15px;
+  padding: 19px 0 0 19px;
   font-weight: 300;
   text-transform: uppercase;
   font-size: 1.4rem;
@@ -330,7 +334,7 @@ dd {
 .description {
   font-size: 1.3rem;
   margin: 0px;
-  padding: 15px;
+  padding: 19px;
   display: inline-block;
 }
 
@@ -356,7 +360,7 @@ dd {
 }
 
 .index-container, .glossary-container {
-  padding: 15px;
+  padding: 19px;
 }
 
 .refs {
@@ -379,7 +383,7 @@ dd {
 }
 
 .license {
-  margin: 15px;
+  margin: 19px;
   font-size: .9rem;
 }
 
@@ -465,10 +469,6 @@ dd {
   .page-title-container, .glossary-title-container {
     container-type: inline-size;
     max-width: 560px;
-  }
-
-  .page-title {
-    font-size: 10cqw;
   }
 
   .author {
