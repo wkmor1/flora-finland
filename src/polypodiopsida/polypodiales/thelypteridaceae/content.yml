@@ -2,3 +2,8 @@ finbifID: MX.37743
 vernacularName: Marsh ferns
 scientificName: Thelypteridaceae
 taxonRank: family
+images:
+- file: img0.jpeg
+  src: https://www.inaturalist.org/photos/428093430
+  alt: Northern beech fern (Phegopteris connectilis) growing in Voiluoto, Rauma
+  caption: <span class="species">Phegopteris connectiliss</span> (Voiluoto, Rauma)

@@ -2,3 +2,8 @@ finbifID: MX.37746
 vernacularName: Beech ferns
 scientificName: Phegopteris
 taxonRank: genus
+images:
+- file: img0.jpeg
+  src: https://www.inaturalist.org/photos/422977731
+  alt: Northern beech fern (Phegopteris connectilis) sporangia
+  caption: <span class="species">Phegopteris connectiliss</span> sporangia

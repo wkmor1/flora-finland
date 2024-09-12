@@ -2,3 +2,8 @@ finbifID: MX.37747
 vernacularName: Northern beech fern
 scientificName: Phegopteris connectilis
 taxonRank: species
+images:
+- file: img0.jpeg
+  src: https://www.inaturalist.org/photos/422977699
+  alt: Northern beech fern (Phegopteris connectilis) growing in Mikkelä, Espoo
+  caption: <span class="species">Phegopteris connectiliss</span> (Mikkelä, Espoo)
