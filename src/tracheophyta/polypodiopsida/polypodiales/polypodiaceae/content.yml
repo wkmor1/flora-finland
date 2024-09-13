@@ -2,3 +2,8 @@ finbifID: MX.37794
 vernacularName: Polypody ferns
 scientificName: Polypodiaceae
 taxonRank: family
+images:
+- file: img0.jpeg
+  src: https://www.inaturalist.org/photos/425913064
+  alt: Common polypody (Polypodium vulgare) growing in Töölö, Helsinki
+  caption: <span class="species">Polypodium vulgare</span> (Töölö, Helsinki)
