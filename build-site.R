@@ -13,6 +13,7 @@ file.copy(
 )
 
 ranks <- list(
+  phylum  = c(plural = "phyla:",    child = "class",      parent = "kingdom"),
   class   = c(plural = "classes:",  child = "order",      parent = "phylum"),
   order   = c(plural = "orders:",   child = "family",     parent = "class"),
   family  = c(plural = "families:", child = "genus",      parent = "order"),
@@ -317,22 +318,14 @@ front_page <- htmltools::withTags(
           ),
           div(
             class = "col1",
-            # taxon name
             div(
               class = "page-title-container",
-              span("phylum", class = "rank"),
               h1(
                 class = "page-title",
-                "Tracheophyta"
-              ),
-              h2("Vascular plants", class = "subtitle")
+                "Chapters"
+              )
             ),
-            # child taxa
             div(
-              h3(
-                class = "taxa-list-title",
-                "Classes"
-              ),
               ul(
                 lapply(
                   mapply(
@@ -358,73 +351,6 @@ front_page <- htmltools::withTags(
                   ),
                   li
                 )
-              )
-            )
-          )
-        ),
-        div(
-          class = "row2",
-          article(
-            class = "col2",
-            div(
-              class = "description-container",
-              h3(class = "description-title", "Description"),
-              p(
-                class = "description",
-                link2glossary(
-                  paste(
-                    "Plants with _vascular tissue_ and dominant _sporophyte_",
-                    "generations."
-                  )
-                )
-              )
-            )
-          ),
-          div(
-            class = "col1",
-            figure(
-              class = "figure",
-              role = "group",
-              img(
-                class = "map",
-                src = "map.svg",
-                alt = "Occurrence of vascular plants (Tracheophyta) in Finland"
-              ),
-              figcaption(
-                class = "info",
-                details(
-                  class = "info-content",
-                  summary(
-                    class = "info-button",
-                    htmltools::HTML("&#9432;")
-                  ),
-                  p(
-                    class = "info-text",
-                    a(
-                      "Source",
-                      href = sprintf(map_source, "MX.53078")
-                    )
-                  )
-                )
-              )
-            )
-          )
-        ),
-        div(
-          class = "row3",
-          h3(class = "refs-title", "References:"),
-          ol(
-            class = "refs",
-            li(
-              "Cavalier-Smith, T. (1998).",
-              "A revised six-kingdom system of life.",
-              htmltools::HTML(
-                "<span class=\"journal\">Biological Reviews</span>,"
-              ),
-              "73(3), 203-266.",
-              a(
-                href ="https://doi.org/10.1111/j.1469-185X.1998.tb00030.x",
-                "doi:10.1111/j.1469-185X.1998.tb00030.x"
               )
             )
           )
@@ -466,6 +392,8 @@ for (page in list.files("src", recursive = TRUE, pattern = "content.yml")) {
     ),
     fixed = TRUE
   )
+
+  siblings <- setdiff(siblings, "favicon")
 
   prev_taxon <- siblings[which(siblings == taxon) - 1L]
 
@@ -533,9 +461,9 @@ for (page in list.files("src", recursive = TRUE, pattern = "content.yml")) {
                     "\u2190",
                     span(
                       class = "parent-taxa-rank",
-                      "phylum:"
+                      "kingdom:"
                     ),
-                    span("Tracheophyta", class ="phylum"),
+                    span("Plantae", class ="kingdom"),
                     href = "/"
                   )
                 )

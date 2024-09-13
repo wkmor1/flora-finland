@@ -62,7 +62,7 @@ names(checklist) <- c(
 checklist <- subset(
   checklist,
   order == "Polypodiales" & taxonRank == "species",
-  c(taxonID, class, order, family, genus, scientificName)
+  c(taxonID, phylum, class, order, family, genus, scientificName)
 )
 
 write.table(
