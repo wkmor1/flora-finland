@@ -1,12 +1,11 @@
-finbifID: MX.4977160
+finbifID: MX.53078
 vernacularName: Vascular plants
 scientificName: Tracheophyta
-taxonRank: class
-description: _Megaphyllous_ _perennial_s with free-living _gametophyte_s and _sporangia[sporangium]_-bearing
-  _sporophyte_s.
+taxonRank: phylum
+description: Plants with _vascular tissue_ and dominant _sporophyte_ generations.
 sources:
-- ref: Cavalier-Smith, T. (1998). A revised six-kingdom system of life.
-   <span class=\"journal\">Biological Reviews</span>, 73(3), 203-266.
+- ref: Cavalier-Smith, T. (1998). A revised six-kingdom system of life. <span class=\"journal\">Biological
+    Reviews</span>, 73(3), 203-266.
   doi: 10.1111/j.1469-185X.1998.tb00030.x
 images:
 - file: img0.jpeg
