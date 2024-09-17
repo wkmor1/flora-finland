@@ -13,7 +13,9 @@ paths <- with(
   gsub(
     " ",
     "_",
-    tolower(file.path("src", class, order, family, genus, scientificName))
+    tolower(
+      file.path("src", phylum, class, order, family, genus, scientificName)
+    )
   )
 )
 
@@ -41,25 +43,6 @@ p <- sf::st_as_sf(p * 1e4, coords = c("x", "y"), crs = 2393)
 p <- sf::st_intersection(p, sf::st_buffer(finland, 5000))
 
 r <- terra::rast(terra::vect(p), res = c(1e4, 1e4))
-
-p <- terra::rasterize(terra::vect(p), r)
-
-gg <-
-  ggplot2::ggplot() +
-  tidyterra::geom_spatraster(data = p, show.legend = FALSE) +
-  ggplot2::scale_fill_continuous(
-    low = "sienna", high = "sienna", na.value = "transparent"
-  ) +
-  ggplot2::geom_sf(
-    data = finland, fill = "transparent", color = "darkslategrey"
-  ) +
-  ggplot2::theme_void()
-
-svglite::svglite(file.path("src", "map.svg"), width = 5, bg = "grey90")
-
-print(gg)
-
-dev.off()
 
 for (page in setdiff(list.dirs("src"), c("src", "src/favicon"))) {
 
