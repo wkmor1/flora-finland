@@ -427,19 +427,6 @@ for (page in list.files("src", recursive = TRUE, pattern = "content.yml")) {
                     href = file.path("", dirname(taxon))
                   )
                 )
-              } else {
-                div(
-                  a(
-                    class = "nav-parent",
-                    "\u2190",
-                    span(
-                      class = "parent-taxa-rank",
-                      "kingdom:"
-                    ),
-                    span("Plantae", class ="kingdom"),
-                    href = "/"
-                  )
-                )
               },
               # taxon name
               div(
