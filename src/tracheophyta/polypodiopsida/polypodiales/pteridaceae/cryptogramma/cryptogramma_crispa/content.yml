@@ -19,5 +19,7 @@ sources:
 images:
 - file: img0.jpeg
   src: https://www.inaturalist.org/photos/151138579
+  alt: Parsely fern (Cryptogramma crispa) growing on Pallastunturi, Muonio
+  caption: <span class="species">Cryptogramma crispa</span> (Pallastunturi, Muonio)
 scientificName: Cryptogramma crispa
 taxonRank: species
