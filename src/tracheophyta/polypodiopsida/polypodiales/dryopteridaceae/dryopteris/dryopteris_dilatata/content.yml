@@ -2,3 +2,8 @@ finbifID: MX.37755
 vernacularName: Broad woodfern
 scientificName: Dryopteris dilatata
 taxonRank: species
+images:
+- file: img0.jpeg
+  src: https://www.inaturalist.org/photos/433315253
+  alt: Broad woodfern (Dryopteris dilatata) growing in Oitån, Espoo
+  caption: <span class="species">Dryopteris dilatata</span> (Oitån, Espoo)
