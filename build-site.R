@@ -286,17 +286,28 @@ front_page <- htmltools::withTags(
     body(
       main(
         class = "main",
-        nav_bar,
         div(
-          class = "row1",
-          # image
+          class = "front-page-container",
           div(
-            class = "col2",
+            class = "front-page-text",
+            h1(
+              class = "front-page-title",
+              "Flora of Finland"
+            ),
+            ul(
+              class = "front-page-contents",
+              li(a(href = "tracheophyta", "Vascular plants")),
+              li(a(href = "taxa-index", "Index")),
+              li(a(href = "glossary", "Glossary"))
+            )
+          ),
+          div(
+            class = "front-page-figure-container",
             figure(
               class = "figure",
               role = "group",
               img(
-                class = "main-img",
+                class = c("main-img", "front-page-image"),
                 src = "/img0.jpeg",
                 alt = "Pitkäjärvi, Enontekiö"
               ),
@@ -312,44 +323,6 @@ front_page <- htmltools::withTags(
                     class = "info-text",
                     "Pitkäjärvi, Enontekiö"
                   )
-                )
-              )
-            )
-          ),
-          div(
-            class = "col1",
-            div(
-              class = "page-title-container",
-              h1(
-                class = "page-title",
-                "Chapters"
-              )
-            ),
-            div(
-              ul(
-                lapply(
-                  mapply(
-                    a,
-                    lapply(
-                      stringr::str_to_sentence(
-                        setdiff(
-                          basename(list.dirs("src", recursive = FALSE)),
-                          "favicon"
-                        )
-                      ),
-                      span,
-                      class = "class"
-                    ),
-                    href = paste0(
-                      setdiff(
-                        basename(list.dirs("src", recursive = FALSE)), "favicon"
-                      ),
-                      "/"
-                    ),
-                    SIMPLIFY = FALSE,
-                    USE.NAMES = FALSE
-                  ),
-                  li
                 )
               )
             )

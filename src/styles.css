@@ -10,7 +10,42 @@ body {
 
 .main {
   max-width: 1300px;
-  margin: 0 auto 2em auto;
+  margin: 0 auto 0 auto;
+}
+
+.front-page-container {
+  position: relative;
+  aspect-ratio: 9/14;
+  container-type: inline-size;
+}
+
+.front-page-text {
+  position: absolute;
+  z-index: 150;
+  padding: 9cqw 7cqw;
+}
+
+.front-page-title {
+  font-weight: 350;
+  font-size: 11cqw;
+  margin: 0;
+}
+
+.front-page-contents {
+  font-weight: 450;
+  font-size: 8cqw;
+  margin-top: 70cqw;
+}
+
+.front-page-figure-container {
+  position: absolute;
+  top: 0;
+}
+
+.front-page-image {
+  aspect-ratio: 9/14;
+  object-fit: none;
+  width: 100%;
 }
 
 .main-header {
@@ -319,7 +354,7 @@ dd {
   border-bottom: 1px solid hsl(0, 0%, 85%);
 }
 
-.index {
+.index, .front-page-contents {
   list-style-type: none;
 }
 
@@ -394,6 +429,29 @@ dd {
 }
 
 @media screen and (min-width: 600px) {
+
+  .front-page-container {
+    aspect-ratio: 4/3;
+  }
+
+  .front-page-text {
+    padding: 9cqw 12cqw;
+  }
+
+  .front-page-title {
+    font-size: 7cqw;
+  }
+
+  .front-page-contents {
+    font-size: 4cqw;
+    margin-top: 18cqw;
+    padding-left: 12cqw;
+  }
+
+  .front-page-image {
+    aspect-ratio: 4/3;
+    object-fit: cover;
+  }
 
   .dropdown {
     display: none;

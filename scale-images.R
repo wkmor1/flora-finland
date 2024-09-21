@@ -1,4 +1,4 @@
-for (page in setdiff(list.dirs("src"), "src/favicon")) {
+for (page in setdiff(list.dirs("src"), c("src", "src/favicon"))) {
 
   for (i in list.files(page, pattern = ".jpeg", full.names = TRUE)) {
 
