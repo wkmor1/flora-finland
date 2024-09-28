@@ -2,3 +2,8 @@ finbifID: MX.37751
 vernacularName: Crested woodfern
 scientificName: Dryopteris cristata
 taxonRank: species
+images:
+- file: img0.jpeg
+  src: https://www.inaturalist.org/photos/433800028
+  alt: Crested woodfern (Dryopteris cristata) growing in Myyrmäki, Vantaa
+  caption: <span class="species">Dryopteris cristata</span> (Myyrmäki, Vantaa)
