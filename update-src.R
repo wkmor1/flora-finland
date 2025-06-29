@@ -79,8 +79,14 @@ for (page in setdiff(list.dirs("src"), c("src", "src/favicon"))) {
   p <- finbif::finbif_occurrence(
     content[["finbifID"]],
     filter  = list(
-      country = "Finland",
-      collection = c("HR.90", "HR.169", "HR.3551", "HR.767")
+      list(
+        country = "Finland",
+        collection = c("HR.90", "HR.169", "HR.3551", "HR.767")
+      ),
+      filter  = list(
+        country = "Finland",
+        event_observer_name = "bartholomewhasty"
+      )
     ),
     select = c(x = "lon_10_center_ykj", y = "lat_10_center_ykj"),
     aggregate = "records",
