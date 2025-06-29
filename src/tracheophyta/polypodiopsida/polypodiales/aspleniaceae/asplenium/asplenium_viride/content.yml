@@ -2,3 +2,8 @@ finbifID: MX.37788
 vernacularName: Green spleenwort
 scientificName: Asplenium viride
 taxonRank: species
+images:
+- file: img0.jpeg
+  src: https://www.inaturalist.org/photos/524907297
+  alt: Asplenium viride growing in Kontiolahti, North Karelia
+  caption: <span class="species">Asplenium viride</span> (Kontiolahti, North Karelia)

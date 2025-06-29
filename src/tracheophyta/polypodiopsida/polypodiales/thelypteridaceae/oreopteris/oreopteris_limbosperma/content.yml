@@ -1,3 +1,9 @@
 finbifID: MX.5022833
 scientificName: Oreopteris limbosperma
+vernacularName: Lemon-scented mountain fern
 taxonRank: species
+images:
+- file: img0.jpeg
+  src: https://www.inaturalist.org/photos/422976707
+  alt: Lemon-scented Mountain Fern (Oreopteris limbosperma) growing in Mikkelä, Espoo
+  caption: <span class="species">Oreopteris limbosperma</span> (Mikkelä, Espoo)
