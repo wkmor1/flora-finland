@@ -38,8 +38,8 @@ download.file(
     "https://cdn.laji.fi",
     "files",
     "checklists",
-    "2023",
-    "Liite1_Appendix1_Lajiluettelo2023_Checklist2023.xlsx"
+    "2024",
+    "Liite1_Appendix1_Lajiluettelo2024_Checklist2024.xlsx"
   ),
   destfile = tmp,
   quiet = TRUE
