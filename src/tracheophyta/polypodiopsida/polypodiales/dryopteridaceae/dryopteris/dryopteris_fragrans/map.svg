@@ -1,5 +1,6 @@
 <?xml version='1.0' encoding='UTF-8' ?>
-<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' class='svglite' width='360.00pt' height='576.00pt' viewBox='0 0 360.00 576.00'>
+<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='360.00pt' height='576.00pt' viewBox='0 0 360.00 576.00'>
+<g class='svglite'>
 <defs>
   <style type='text/css'><![CDATA[
     .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {
@@ -11,6 +12,10 @@
     }
     .svglite text {
       white-space: pre;
+    }
+    .svglite g.glyphgroup path {
+      fill: inherit;
+      stroke: none;
     }
   ]]></style>
 </defs>
@@ -104,5 +109,6 @@
 <path d='M 223.92 519.77 L 224.13 519.98 L 224.56 523.29 L 224.21 523.84 L 223.66 523.78 L 223.38 523.57 L 222.96 522.26 L 222.89 521.78 L 222.96 521.23 L 223.23 520.19 L 223.50 519.77 L 223.92 519.77 Z' style='fill-rule: evenodd; stroke-width: 0.43; stroke: #2F4F4F; stroke-linecap: butt;' />
 </g>
 <g clip-path='url(#cpMC4wMHwzNjAuMDB8MC4wMHw1NzYuMDA=)'>
+</g>
 </g>
 </svg>
