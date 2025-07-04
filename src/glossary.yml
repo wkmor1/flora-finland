@@ -62,10 +62,19 @@
   definition: A _megaphyll_ of a fern.
 - term: Rhizome
   definition: A plant stem that grows parallel to the growing medium or surface
-   from which roots and shoots emerge.
+    from which roots and shoots emerge.
 - term: Lancelolate
   definition: Long, narrow, wider at the base than at the middle and tapering to
     a point at the top.
 - term: Fern scale
   definition: A thin surface structure on a _frond_ or _rhizome_ that is more
-   than one cell wide.
+    than one cell wide.
+- term: Clathrate
+  definition: Lattice-like appearence due to thick lateral cell walls and
+    transparent surface walls.
+- term: Pedicellate
+  definition: A structure supported by a stalk or stem.
+- term: Reniform
+  definition: Kidney-shaped.
+- term: Monolete
+  definition: Having a single linear scar on the surface.
