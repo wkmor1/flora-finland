@@ -21,6 +21,9 @@
     germinate into a _gametophyte_.
 - term: Vein
   definition: The major regions of a plant leaf occupied by _vascular tissue_.
+- term: Midvein
+  definition: The _vein_ that emerges from the base of a leaf and runs
+    down the middle towards the tip.
 - term: Microphyll
   definition:  A type of plant leaf that has a single _vein_s, the other type
     being a _macrophyll_.
@@ -37,14 +40,14 @@
 - term: Sporangial stalk
   definition: A thin structure connecting the base of a _sporangium_ to a
     _sporophyte_.
-- term: Sporangial Stomium
+- term: Sporangial stomium
   definition: The cells in the region of the _sporangium_ that opens so that the
     _spore_s are released.
 - term: Stipe
   definition: The thin base of a _frond_ connecting the _blade_ to the rest of
     the fern.
 - term: Vascular bundle
-  definition: An arrangment of _vascular tissue_ within a plant.
+  definition: An arrangement of _vascular tissue_ within a plant.
 - term: Blade
   definition: The flattened upper part of a _frond_.
 - term: Sorus
@@ -63,14 +66,17 @@
 - term: Rhizome
   definition: A plant stem that grows parallel to the growing medium or surface
     from which roots and shoots emerge.
-- term: Lancelolate
+- term: Lanceolate
   definition: Long, narrow, wider at the base than at the middle and tapering to
     a point at the top.
 - term: Fern scale
   definition: A thin surface structure on a _frond_ or _rhizome_ that is more
     than one cell wide.
+- term: Fern hair
+  definition: A thin surface structure on a _frond_ or _rhizome_ that is only
+    one cell wide.
 - term: Clathrate
-  definition: Lattice-like appearence due to thick lateral cell walls and
+  definition: Lattice-like appearance due to thick lateral cell walls and
     transparent surface walls.
 - term: Pedicellate
   definition: A structure supported by a stalk or stem.
@@ -78,3 +84,5 @@
   definition: Kidney-shaped.
 - term: Monolete
   definition: Having a single linear scar on the surface.
+- term: Reflex
+  definition: Curled over.

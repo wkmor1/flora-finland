@@ -7,3 +7,9 @@ images:
   src: https://www.inaturalist.org/photos/423729007
   alt: Common Bracken (Pteridium aquilinum) growing in Kallahti, Helsinki
   caption: <span class="species">Pteridium aquilinum</span> (Kallahti, Helsinki)
+description: Ferns with _rhizome_s that have jointed _hair[fern hair]_s. Leaf
+  _vein_s branch from the _midvein_ and do not unite to form a network.
+sources:
+- ref: Smith, A. R., et al. (2006). A classification for extant ferns.
+    <span class="journal">Taxon</span>, 55(3), 705-731.
+  doi: 10.2307/25065646
