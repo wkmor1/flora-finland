@@ -69,12 +69,10 @@
 - term: Lanceolate
   definition: Long, narrow, wider at the base than at the middle and tapering to
     a point at the top.
-- term: Fern scale
-  definition: A thin surface structure on a _frond_ or _rhizome_ that is more
-    than one cell wide.
-- term: Fern hair
-  definition: A thin surface structure on a _frond_ or _rhizome_ that is only
-    one cell wide.
+- term: Scale
+  definition: A thin surface structure that is more than one cell wide.
+- term: Hair
+  definition: A thin surface structure that is only one cell wide.
 - term: Clathrate
   definition: Lattice-like appearance due to thick lateral cell walls and
     transparent surface walls.
@@ -86,3 +84,12 @@
   definition: Having a single linear scar on the surface.
 - term: Reflex
   definition: Curled over.
+- term: Dictyostele
+  definition: A type of _stele_ where the _vascular tissue_ is divided into
+    strands encircling a central _pith_.
+- term: Stele
+  definition: The central part of the root or stem of a
+    _vascular[vascular tissue]_ plant.
+- term: Pith
+  definition: Central tissue of vascular plant stems and roots that does not
+    form part of the _vascular tissue_.

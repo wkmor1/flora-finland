@@ -7,3 +7,9 @@ images:
   src: https://www.inaturalist.org/photos/425913064
   alt: Common polypody (Polypodium vulgare) growing in Töölö, Helsinki
   caption: <span class="species">Polypodium vulgare</span> (Töölö, Helsinki)
+description: Ferns with _dictyostelic[dictyostele]_ _scale_-bearing _rhizomes_.
+  _Sori[sorus]_ lack _indusia[indusium]_.
+sources:
+- ref: Smith, A. R., et al. (2006). A classification for extant ferns.
+    <span class="journal">Taxon</span>, 55(3), 705-731.
+  doi: 10.2307/25065646
