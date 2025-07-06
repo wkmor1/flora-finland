@@ -2,3 +2,9 @@ finbifID: MX.37735
 vernacularName: Brakes
 scientificName: Pteridaceae
 taxonRank: family
+description: Ferns with _rhizome_s bearing _scale_s or _hair_s and _sori[sorus]_
+  that lack _indusia[indusium]_.
+sources:
+- ref: Smith, A. R., et al. (2006). A classification for extant ferns.
+    <span class="journal">Taxon</span>, 55(3), 705-731.
+  doi: 10.2307/25065646
