@@ -297,7 +297,7 @@ a {
 .info-content {
   position: relative;
   z-index: 50;
-  background-color: rgba(242, 242, 242, .7);
+  background-color: rgba(242, 242, 242, .8);
 }
 
 .info-button {
@@ -311,7 +311,7 @@ a {
   position: absolute;
   bottom: 0;
   right: 0;
-  background-color: rgba(242, 242, 242, .7);
+  background-color: rgba(242, 242, 242, .8);
 }
 
 .info-button::-webkit-details-marker {
