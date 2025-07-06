@@ -465,7 +465,14 @@ for (page in list.files("src", recursive = TRUE, pattern = "content.yml")) {
               if (length(taxa)) div(
                 h3(
                   class = "taxa-list-title",
-                  ranks[[c(ranks[[c(rank, "child")]], "plural")]]
+                  paste(
+                    length(taxa),
+                    if (length(taxa) > 1) {
+                      ranks[[c(ranks[[c(rank, "child")]], "plural")]]
+                    } else {
+                      paste0(ranks[[c(rank, "child")]], ":")
+                    }
+                  )
                 ),
                 ul(
                   lapply(
