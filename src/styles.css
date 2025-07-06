@@ -35,6 +35,8 @@ body {
   font-weight: 450;
   font-size: 8cqw;
   margin-top: 70cqw;
+  background-color: rgba(242, 242, 242, .8);
+  padding: 2cqw;
 }
 
 .front-page-figure-container {
@@ -445,7 +447,6 @@ dd {
   .front-page-contents {
     font-size: 4cqw;
     margin-top: 18cqw;
-    padding-left: 12cqw;
   }
 
   .front-page-image {

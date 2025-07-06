@@ -296,7 +296,7 @@ front_page <- htmltools::withTags(
             ),
             ul(
               class = "front-page-contents",
-              li(a(href = "tracheophyta", "Vascular plants")),
+              li(a(href = "tracheophyta", "Taxon accounts")),
               li(a(href = "taxa-index", "Index")),
               li(a(href = "glossary", "Glossary"))
             )
