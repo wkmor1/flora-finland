@@ -2,3 +2,8 @@ finbifID: MX.37779
 vernacularName: Smooth woodsia
 scientificName: Woodsia glabella
 taxonRank: species
+images:
+- file: img0.jpeg
+  src: https://www.inaturalist.org/photos/413434547
+  alt: Smooth woodsia (Woodsia glabella) growing in Laitila, Kuusamo
+  caption: <span class="species">Woodsia glabella</span> (Laitila, Kuusamo)

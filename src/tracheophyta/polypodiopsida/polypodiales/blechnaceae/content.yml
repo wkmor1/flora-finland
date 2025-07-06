@@ -11,3 +11,8 @@ sources:
     (Polypodiales&colon; Polypodiopsida)&colon; New genera, resurrected names,
     and combinations. <span class="journal">Phytotaxa</span>, 275(3), 191-227.
   doi: 10.11646/phytotaxa.275.3.1
+images:
+- file: img0.jpeg
+  src: https://www.inaturalist.org/photos/531698598
+  alt: Western deer fern (Struthiopteris spicant) growing in Mikkelä, Espoo
+  caption: <span class="species">Struthiopteris spicant</span> (Mikkelä, Espoo)
