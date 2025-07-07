@@ -299,12 +299,13 @@ a {
 }
 
 .info-content {
-  position: relative;
   z-index: 50;
+  position: relative;
   background-color: rgba(242, 242, 242, .8);
 }
 
 .info-button {
+  z-index: 100;
   list-style: none;
   float: right;
   display: block;
@@ -323,6 +324,7 @@ a {
 }
 
 .info-text {
+  z-index: 100;
   margin: 0;
   display: inline-block;
   line-height: 1.5;
