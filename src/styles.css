@@ -361,15 +361,20 @@ dl {
   display: grid;
   grid-gap: 4px 16px;
   grid-template-columns: max-content;
+  margin-bottom: 4cqw;
 }
 
 dt {
+  padding-left: 2cqw;
+  padding-top: 2cqw;
   font-weight: bold;
   margin-bottom: 10px;
 }
 
 dd {
   margin: 0;
+  max-width: 600px;
+  padding-top: 2cqw;
   padding-bottom: 10px;
   grid-column-start: 2;
   border-bottom: 1px solid hsl(0, 0%, 85%);
