@@ -283,13 +283,26 @@ a {
 .carousel::before {
   content: '〈';
   background: linear-gradient(to right, rgba(0, 0, 0, .5), transparent),
-              linear-gradient(to bottom, transparent, rgba(0, 0, 0, .4), transparent);
+              linear-gradient(
+                to bottom,
+                transparent,
+                transparent,
+                rgba(0, 0, 0, .4),
+                transparent,
+                transparent
+              );
 }
 
 .carousel::after {
   content: '〉';
   background: linear-gradient(to left, rgba(0, 0, 0, .5), transparent),
-              linear-gradient(to bottom, transparent, rgba(0, 0, 0, .4), transparent);
+              linear-gradient(
+                to bottom,
+                transparent,
+                transparent,
+                rgba(0, 0, 0, .4),
+                transparent
+              );
 }
 
 .info {
