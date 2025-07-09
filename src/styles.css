@@ -218,6 +218,7 @@ a {
 }
 
 .carousel {
+  z-index: 20;
   position: relative;
   width: 100%;
   aspect-ratio: 4/3;
@@ -339,7 +340,6 @@ a {
 }
 
 .info-text {
-  z-index: 100;
   margin: 0;
   display: inline-block;
   line-height: 1.5;
