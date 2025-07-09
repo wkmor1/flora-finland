@@ -283,27 +283,12 @@ a {
 
 .carousel::before {
   content: '〈';
-  background: linear-gradient(to right, rgba(0, 0, 0, .5), transparent),
-              linear-gradient(
-                to bottom,
-                transparent,
-                transparent,
-                rgba(0, 0, 0, .4),
-                transparent,
-                transparent
-              );
+  background: radial-gradient(circle 15cqw at 0% 50%, rgb(0, 0, 0, .9), transparent);
 }
 
 .carousel::after {
   content: '〉';
-  background: linear-gradient(to left, rgba(0, 0, 0, .5), transparent),
-              linear-gradient(
-                to bottom,
-                transparent,
-                transparent,
-                rgba(0, 0, 0, .4),
-                transparent
-              );
+  background: radial-gradient(circle 15cqw at 100% 50%, rgb(0, 0, 0, .9), transparent);
 }
 
 .info {
@@ -561,6 +546,10 @@ dd {
 
   .subtitle {
     font-size: 1.5rem;
+  }
+
+  .carousel-snapper {
+    border-left: 1px solid transparent;
   }
 
   .main-img {
