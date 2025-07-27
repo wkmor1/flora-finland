@@ -8,6 +8,20 @@ body {
   margin: 0;
 }
 
+@view-transition {
+  navigation: auto;
+}
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: fade 0.3s ease both;
+}
+
+@keyframes fade {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
 .main {
   max-width: 1300px;
   margin: 0 auto 0 auto;
