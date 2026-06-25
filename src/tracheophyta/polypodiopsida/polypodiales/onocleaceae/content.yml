@@ -7,12 +7,12 @@ images:
   src: https://www.inaturalist.org/photos/284468256
   alt: Ostrich fern (Matteuccia struthiopteris) growing in Vuosaari, Helsinki
   caption: <span class="species">Matteuccia struthiopteris</span> (Vuosaari, Helsinki)
-description: Ferns with _frond_s that bear _sporangia_ having a different
-  appearance to the fronds that do not. _Stipe_s have two _vascular bundles_
-  that unit towards the base of the _blade_ and form a curved, flat-bottomed,
-  gutter-like shape in cross-section. Sori are enclosed by _reflex_ed leaf
-  margins and membranous _indusia[indusium]_. _Spore_s are _reniform_.
+description: Ferns with _frond_s that bear _sporangia_ having a different appearance
+  to the fronds that do not. _Stipe_s have two _vascular bundles_ that unit towards
+  the base of the _blade_ and form a curved, flat-bottomed, gutter-like shape in cross-section.
+  Sori are enclosed by _reflex_ed leaf margins and membranous _indusia[indusium]_.
+  _Spore_s are _reniform_.
 sources:
-- ref: Smith, A. R., et al. (2006). A classification for extant ferns.
-    <span class="journal">Taxon</span>, 55(3), 705-731.
+- ref: Smith, A. R., et al. (2006). A classification for extant ferns. <span class="journal">Taxon</span>,
+    55(3), 705-731.
   doi: 10.2307/25065646

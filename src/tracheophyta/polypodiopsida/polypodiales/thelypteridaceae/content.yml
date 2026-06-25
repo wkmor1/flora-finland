@@ -2,14 +2,14 @@ finbifID: MX.37743
 vernacularName: Marsh ferns
 scientificName: Thelypteridaceae
 taxonRank: family
-description: Ferns with blackish wiry roots. _Rhizome_s bear _lanceolate_
-  non-_clathrate_ _scale_s. _Stipe_s have crescent-shaped _vascular bundles_
-  that unite towards the base of the _blade_ to form a U-shape in cross-section.
-  _Sori[sorus]_ are found on top of _vein_s.
+description: Ferns with blackish wiry roots. _Rhizome_s bear _lanceolate_ non-_clathrate_
+  _scale_s. _Stipe_s have crescent-shaped _vascular bundles_ that unite towards the
+  base of the _blade_ to form a U-shape in cross-section. _Sori[sorus]_ are found
+  on top of _vein_s.
 sources:
-- ref: Rothfels, Carl J., et al. (2012). A revised family–level classification
-    for eupolypod II ferns (Polypodiidae&colon; Polypodiales).
-    <span class="journal">Taxon</span>, 61(3), 515-533.
+- ref: Rothfels, Carl J., et al. (2012). A revised family–level classification for
+    eupolypod II ferns (Polypodiidae&colon; Polypodiales). <span class="journal">Taxon</span>,
+    61(3), 515-533.
   doi: 10.1002/tax.613003
 images:
 - file: img0.jpeg

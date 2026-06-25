@@ -2,16 +2,15 @@ finbifID: MX.37762
 vernacularName: True ladyferns
 scientificName: Athyrium
 taxonRank: genus
-description: Ferns with stipes that have adaxial grooves, two vascular bundles
-  and are scaly at the base. Blade segments are inequilateral at base. Groove of
-  rachis continuous to grooves of costae and costules. Veins free and extending
-  to tooth tips at lamina margin.
+description: Ferns with stipes that have adaxial grooves, two vascular bundles and
+  are scaly at the base. Blade segments are inequilateral at base. Groove of rachis
+  continuous to grooves of costae and costules. Veins free and extending to tooth
+  tips at lamina margin.
 sources:
-- ref: Wei, R., Ebihara, A., Zhu, Y. M., Zhao, C. F., Hennequin, S., & Zhang,
-    X. C. (2018). A total-evidence phylogeny of the lady fern genus
-    <span class="genus">Athyrium<span> Roth (Athyriaceae) with a new
-    infrageneric classification. <span class="journal">Molecular Phylogenetics
-    and Evolution</span, 119, 25-36.
+- ref: Wei, R., Ebihara, A., Zhu, Y. M., Zhao, C. F., Hennequin, S., & Zhang, X. C.
+    (2018). A total-evidence phylogeny of the lady fern genus <span class="genus">Athyrium<span>
+    Roth (Athyriaceae) with a new infrageneric classification. <span class="journal">Molecular
+    Phylogenetics and Evolution</span, 119, 25-36.
   doi: 10.1016/j.ympev.2017.10.019
 images:
 - file: img0.jpeg

@@ -5,5 +5,6 @@ taxonRank: species
 images:
 - file: img0.jpeg
   src: https://www.inaturalist.org/photos/535355893
-  alt: Calcareous maidenhair spleenwort (Asplenium quadrivalens) growing in Lohjansaari, Lohja
+  alt: Calcareous maidenhair spleenwort (Asplenium quadrivalens) growing in Lohjansaari,
+    Lohja
   caption: <span class="species">Asplenium quadrivalens</span> (Lohjansaari, Lohja)

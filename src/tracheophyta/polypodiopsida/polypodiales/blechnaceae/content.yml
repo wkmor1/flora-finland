@@ -2,14 +2,13 @@ finbifID: MX.37791
 vernacularName: Chain ferns
 scientificName: Blechnaceae
 taxonRank: family
-description: Ferns with _rhizome_s with non-_clathrate_ _scale_s and
-  _stipe_s with a ring of many _vascular bundle_s in cross-section.
-  _Sori[sorus]_ are linear and _sporangia[sporangium]_ are _pedicellate_.
-  _Spore_s are _reniform_ and _monolete_.
+description: Ferns with _rhizome_s with non-_clathrate_ _scale_s and _stipe_s with
+  a ring of many _vascular bundle_s in cross-section. _Sori[sorus]_ are linear and
+  _sporangia[sporangium]_ are _pedicellate_. _Spore_s are _reniform_ and _monolete_.
 sources:
-- ref: De Gasper, Andre Luis, et al. (2016). A classification for Blechnaceae
-    (Polypodiales&colon; Polypodiopsida)&colon; New genera, resurrected names,
-    and combinations. <span class="journal">Phytotaxa</span>, 275(3), 191-227.
+- ref: De Gasper, Andre Luis, et al. (2016). A classification for Blechnaceae (Polypodiales&colon;
+    Polypodiopsida)&colon; New genera, resurrected names, and combinations. <span
+    class="journal">Phytotaxa</span>, 275(3), 191-227.
   doi: 10.11646/phytotaxa.275.3.1
 images:
 - file: img0.jpeg
