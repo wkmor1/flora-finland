@@ -2,3 +2,8 @@ finbifID: MX.37772
 vernacularName: Limestone oak fern
 scientificName: Gymnocarpium robertianum
 taxonRank: species
+images:
+- file: img0.jpeg
+  src: https://www.inaturalist.org/photos/683233074
+  alt: Limestone oak fern (Gymnocarpium robertianum) growing at Oulanka, Kuusamo
+  caption: <span class="species">Gymnocarpium robertianum</span> (Oulanka, Kuusamo)

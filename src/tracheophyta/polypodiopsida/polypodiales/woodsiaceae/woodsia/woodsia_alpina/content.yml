@@ -2,3 +2,8 @@ finbifID: MX.37777
 vernacularName: Alpine woodsia
 scientificName: Woodsia alpina
 taxonRank: species
+images:
+- file: img0.jpeg
+  src: https://www.inaturalist.org/photos/683259767
+  alt: Alpine woodsia (Woodsia alpina) growing at Oulanka, Kuusamo
+  caption: <span class="species">Woodsia alpina</span> (Oulanka, Kuusamo)

@@ -2,3 +2,8 @@ finbifID: MX.37769
 vernacularName: Mountain bladder-fern
 scientificName: Cystopteris montana
 taxonRank: species
+images:
+- file: img0.jpeg
+  src: https://www.inaturalist.org/photos/683231852
+  alt: Mountain bladder-fern (Cystopteris montana) growing at Oulanka, Kuusamo
+  caption: <span class="species">Cystopteris montana</span> (Oulanka, Kuusamo)

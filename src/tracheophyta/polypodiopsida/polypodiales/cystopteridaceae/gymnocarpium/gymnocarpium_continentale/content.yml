@@ -2,3 +2,8 @@ finbifID: MX.37773
 vernacularName: Nahanni oak fern
 scientificName: Gymnocarpium continentale
 taxonRank: species
+images:
+- file: img0.jpeg
+  src: https://www.inaturalist.org/photos/682618948
+  alt: Nahanni oak fern (Gymnocarpium continentale) growing at Oulanka, Kuusamo
+  caption: <span class="species">Gymnocarpium continentale</span> (Oulanka, Kuusamo)

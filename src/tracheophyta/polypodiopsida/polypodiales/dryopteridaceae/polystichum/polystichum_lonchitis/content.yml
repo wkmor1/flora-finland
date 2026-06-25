@@ -2,3 +2,8 @@ finbifID: MX.37758
 vernacularName: Northern hollyfern
 scientificName: Polystichum lonchitis
 taxonRank: species
+images:
+- file: img0.jpeg
+  src: https://www.inaturalist.org/photos/685452775
+  alt: Northern hollyfern (Polystichum lonchitis) growing at Kilpisjärvi, Enontekiö
+  caption: <span class="species">Polystichum lonchitis</span> (Kilpisjärvi, Enontekiö)
