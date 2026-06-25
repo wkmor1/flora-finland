@@ -3,7 +3,8 @@ future::plan(future::multisession, workers = 2)
 options(
   finbif_cache_path = "cache",
   finbif_rate_limit = Inf,
-  finbif_hide_progress = TRUE
+  finbif_hide_progress = TRUE,
+  finbif_use_dwc = FALSE
 )
 
 checklist <- read.csv("checklist.csv")
@@ -54,7 +55,7 @@ for (page in setdiff(list.dirs("src"), c("src", "src/favicon"))) {
 
   content <- yaml::yaml.load_file(content_file, readLines.warn = FALSE)
 
-  checklist_taxon <-subset(
+  checklist_taxon <- subset(
     checklist, gsub(" ", "_", tolower(scientificName)) == taxon
   )
 
@@ -67,7 +68,7 @@ for (page in setdiff(list.dirs("src"), c("src", "src/favicon"))) {
   }
 
   taxon_data <- finbif::finbif_taxa(content[["finbifID"]])
-  taxon_data <- taxon_data[["content"]]
+  taxon_data <- taxon_data[[c("content", "results")]]
   taxon_data <- taxon_data[[1L]]
 
   content[["scientificName"]] <- taxon_data[["scientificName"]]
@@ -81,11 +82,7 @@ for (page in setdiff(list.dirs("src"), c("src", "src/favicon"))) {
     filter  = list(
       list(
         country = "Finland",
-        collection = c("HR.90", "HR.169", "HR.3551", "HR.767")
-      ),
-      filter  = list(
-        country = "Finland",
-        event_observer_name = "bartholomewhasty"
+        collection = c("HR.90", "HR.169", "HR.3551", "HR.767", "HR.3211")
       )
     ),
     select = c(x = "lon_10_center_ykj", y = "lat_10_center_ykj"),
