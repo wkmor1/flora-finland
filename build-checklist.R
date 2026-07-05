@@ -61,7 +61,9 @@ names(checklist) <- c(
 
 checklist <- subset(
   checklist,
-  order == "Polypodiales" & taxonRank == "species",
+    order == "Polypodiales" &
+    taxonRank == "species" &
+    scientificName != "Polystichum aculeatum",
   c(taxonID, phylum, class, order, family, genus, scientificName)
 )
 
