@@ -31,7 +31,9 @@ finland <- readRDS("finland.rds")
 p <- finbif::finbif_occurrence(
   "Tracheophyta",
   filter = list(
-    country = "Finland", collection = c("HR.90", "HR.169", "HR.3551", "HR.767")
+    country = "Finland",
+    collection = c("HR.90", "HR.169", "HR.767"),
+    coordinates_uncertainty_max = 10000
   ),
   select = c(x = "lon_10_center_ykj", y = "lat_10_center_ykj"),
   aggregate = "records",
@@ -79,11 +81,10 @@ for (page in setdiff(list.dirs("src"), c("src", "src/favicon"))) {
 
   p <- finbif::finbif_occurrence(
     content[["finbifID"]],
-    filter  = list(
-      list(
-        country = "Finland",
-        collection = c("HR.90", "HR.169", "HR.3551", "HR.767", "HR.3211")
-      )
+    filter = list(
+      country = "Finland",
+      collection = c("HR.90", "HR.169", "HR.767", "HR.3211"),
+      coordinates_uncertainty_max = 10000
     ),
     select = c(x = "lon_10_center_ykj", y = "lat_10_center_ykj"),
     aggregate = "records",
