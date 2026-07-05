@@ -103,3 +103,18 @@
   definition: Parallel to the surface of the tissue.
 - term: Cell wall
   definition: The outer rigid structure surrounding a plant cell.
+- term: Adaxial
+  definition: Facing towards the stem.
+- term: Rachis
+  definition: The midrib of the _blade_.
+- term: Costa
+  definition: The midrib of the _pinna_.
+- term: Costule
+  definition: The midrib of the _pinnule_.
+- term: Pinna
+  definition: The first level of division of a compound leaf.
+- term: Pinnule
+  definition: The second level of division of a compound leaf.
+- term: Free veins
+  definition: _Vein_s branching from the _midvein_ that do not unite with other
+    _vein_s.
