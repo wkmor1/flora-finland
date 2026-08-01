@@ -8,3 +8,8 @@ sources:
 - ref: Smith, A. R., et al. (2006). A classification for extant ferns. <span class="journal">Taxon</span>,
     55(3), 705-731.
   doi: 10.2307/25065646
+images:
+- file: img0.jpeg
+  src: https://www.inaturalist.org/photos/141409447
+  alt: Parsely fern (Cryptogramma crispa) growing on Pallastunturi, Muonio
+  caption: <span class="species">Cryptogramma crispa</span> (Pallastunturi, Muonio)
