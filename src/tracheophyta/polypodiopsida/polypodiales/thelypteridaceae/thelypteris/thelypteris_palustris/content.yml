@@ -3,5 +3,7 @@ vernacularName: Eurasian marsh fern
 images:
 - file: img0.jpeg
   src: https://www.inaturalist.org/photos/414105321
+  alt: Eurasian marsh fern (Thelypteris palustris) growing in Preiviikinlahti, Pori
+  caption: <span class="species">Thelypteris palustris</span> (Preiviikinlahti, Pori)
 scientificName: Thelypteris palustris
 taxonRank: species
